@@ -7,7 +7,7 @@ function start(port) {
     function onRequest(request, response) {
 
         /* check if the request contains an .. code */
-        statusAnalyze = ana.analyze(request);
+        statusAnalyze = ana.analyze(request, response);
 
         var text = fs.readFileSync('./html/demo.html','utf8')
 
