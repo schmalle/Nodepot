@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Nodepot.iml" afterPath="$PROJECT_DIR$/Nodepot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reporter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer.js" afterPath="$PROJECT_DIR$/analyzer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.js" afterPath="$PROJECT_DIR$/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/demo.html" afterPath="$PROJECT_DIR$/html/demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Nodepot.iws" />
@@ -77,7 +71,7 @@
       <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="3" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+            <state line="25" column="6" selection-start="701" selection-end="723" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -92,10 +86,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="db.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="38" selection-start="1338" selection-end="1338" vertical-scroll-proportion="1.6048502" vertical-offset="0" max-vertical-offset="1935">
+            <state line="69" column="50" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="1234" max-vertical-offset="1935">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporter.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reporter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="110" selection-start="181" selection-end="181" vertical-scroll-proportion="0.06419401" vertical-offset="0" max-vertical-offset="750">
               <folding />
             </state>
           </provider>
@@ -116,7 +119,7 @@
       <file leaf-file-name="analyzer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="32" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="1080">
+            <state line="42" column="0" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
               <folding />
             </state>
           </provider>
@@ -147,8 +150,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/html/demo.html" />
         <option value="$PROJECT_DIR$/db.js" />
-        <option value="$PROJECT_DIR$/analyzer.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/analyzer.js" />
+        <option value="$PROJECT_DIR$/reporter.js" />
       </list>
     </option>
   </component>
@@ -444,12 +448,12 @@
       <workItem from="1392321921201" duration="1315000" />
       <workItem from="1392412801375" duration="285000" />
       <workItem from="1392413153327" duration="20000" />
-      <workItem from="1392413186274" duration="5067000" />
+      <workItem from="1392413186274" duration="5350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12211000" />
+    <option name="totallyTimeSpent" value="12494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="819" extended-state="6" />
@@ -515,13 +519,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/analyzer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -862,20 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="32" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="1080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="3" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -883,9 +866,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="38" selection-start="1338" selection-end="1338" vertical-scroll-proportion="1.6048502" vertical-offset="0" max-vertical-offset="1935">
+        <state line="69" column="50" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.0" vertical-offset="1234" max-vertical-offset="1935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="6" selection-start="701" selection-end="723" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="110" selection-start="181" selection-end="181" vertical-scroll-proportion="0.06419401" vertical-offset="0" max-vertical-offset="750">
           <folding />
         </state>
       </provider>

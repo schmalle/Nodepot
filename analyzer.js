@@ -40,10 +40,8 @@ function URLNotExists(url, response)
  */
 function analyze(request, response)
 {
-    var path = url.parse(request.url).path;
     var query = url.parse(request.url).query;
 
-    console.log("Found path: " + path);
     console.log("Found query: " + query);
 
     var externalReference =  (S(query).contains("http://"));
