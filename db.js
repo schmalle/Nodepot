@@ -5,6 +5,8 @@
 var redis = require("redis"),
     client = redis.createClient();
 
+var fs = require("fs");
+
 client.on("error", function (err) {
     console.log("Error " + err);
 });
@@ -55,59 +57,60 @@ function setstore(ip)
 }
 
 
-
-function setgetall()
+/** return all data from the NP_IP set **/
+function setgetall(response)
 {
     client.smembers("NP_IP", function (error, value)
     {
-        if (value == null)
-        {
-            console.log("db.smembers(): ERROR: Key " + url + " not existing...");
-        }
-        else
-        {
-            console.log("db.smembers(): Found value " + value);
 
-        }
-
+        var a = "";
 
         value.forEach(function (attack) {
 
-            console.log("Found value within setgetall: " + attack);
+            console.log("Found value: " + attack);
+            response.write(attack + "<br>");
+            a = a + attack + "<br>";
 
         });
 
+        fs.writeFile("./html/dork.html", a, function(err) {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log("The file was saved!");
+            }
+        });
         return value;
 
     });
 }
 
 
-
-
-
-function ismember(ip)
+/**
+ * simple wrapper for the redis call calling sub routines depending on the result
+ * @param ip
+ * @param positive
+ * @param negative
+ * @param response
+ */
+function ismember(ip, positive, negative, response)
 {
+
     client.sismember("NP_IP", ip, function (error, value)
     {
-        if (value == null)
+
+        console.log("Result from sismember call for ip " + ip + ": value: " + value + " error: " + error)
+
+        if (1 == value)
         {
-            console.log("db.ismember(): ERROR: Key " + url + " not existing...");
+            positive(ip, response);
         }
         else
         {
-            console.log("db.ismember(): Found value " + value);
+            negative(ip, response);
         }
 
-        return value;
-
     });
-
-
-
-
-
-
 
 }
 

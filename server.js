@@ -6,14 +6,16 @@ var ana = require("./analyzer");
 function start(port) {
     function onRequest(request, response) {
 
+        response.writeHead(200, {"Content-Type": "text/html"});
+
         /* check if the request contains an .. code */
         statusAnalyze = ana.analyze(request, response);
 
-        var text = fs.readFileSync('./html/demo.html','utf8')
+        var defaultTemplate = fs.readFileSync('./html/demo.html','utf8')
+        var learnedStuff = fs.readFileSync('./html/dork.html','utf8')
 
-        response.writeHead(200, {"Content-Type": "text/html"});
-        response.write("Hello World");
-        response.write(text);
+        response.write(defaultTemplate);
+        response.write(learnedStuff);
         response.end();
     }
 

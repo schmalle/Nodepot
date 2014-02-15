@@ -5,33 +5,60 @@
 
 var url = require("url");
 var db = require("./db");
+var S = require('string');
 
+/**
+ *
+ * @param url
+ * @param response
+ * @constructor
+ */
+function URLExists(url, response)
+{
+    console.log("Starting URLExists with URL " + url);
+}
 
-/** analyze the request **/
+/**
+ *
+ * @param url
+ * @param response
+ * @constructor
+ */
+function URLNotExists(url, response)
+{
+    db.setstore(url);
+
+    // update the preloaded file
+    db.setgetall(response);
+}
+
+/**
+ * analyze the inbound request
+ * @param request
+ * @param response
+ * @returns {number}
+ */
 function analyze(request, response)
 {
     var path = url.parse(request.url).path;
     var query = url.parse(request.url).query;
-    console.log("Found request to URI " + path);
 
     console.log("Found path: " + path);
     console.log("Found query: " + query);
 
+    var externalReference =  (S(query).contains("http://"));
+    var directoryTraversal = (S(query).contains(".."));
+    var crossSiteScripting = (S(query).contains("alert("));
 
-
-
-    db.setstore("127.0.0.1");
-    db.ismember("127.0.0.1");
-    db.ismember("127.0.0.5");
-
-    db.setgetall(response);
-
-
-
-
-
-
-    return 1;
+    if (externalReference || directoryTraversal || crossSiteScripting)
+    {
+         console.log("Some form of attack found");
+         db.ismember(path, URLExists, URLNotExists, response);
+    }
+    else
+    {
+        URLExists(response);
+    }
 
 }
 
