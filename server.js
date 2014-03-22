@@ -3,7 +3,7 @@ var url = require("url");
 var fs = require("fs");
 var ana = require("./analyzer");
 
-function start(port) {
+function start(port, configFileName) {
     function onRequest(request, response) {
 
         /* set the correct content type */
