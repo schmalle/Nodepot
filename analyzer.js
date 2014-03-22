@@ -53,7 +53,7 @@ function analyze(request, response)
         var crossSiteScripting = (S(query).contains("alert("));
 
         if (externalReference || directoryTraversal || crossSiteScripting) {
-            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Some form of attack found");
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + request.url + " from IP: " + request.connection.remoteAddress);
             db.ismember(request.url, URLExists, URLNotExists, response);
         }
         else {
@@ -63,7 +63,7 @@ function analyze(request, response)
     }   // if query != null
     else
     {
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query: ");
+        //console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query: ");
     }
 
 }

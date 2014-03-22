@@ -1,8 +1,10 @@
 var querystring = require('querystring');
 var http = require('http');
 var fs = require('fs');
+var S = require('string');
 
-function report(username, password, host, ip, time, attacktyoe) {
+
+function report(username, password, host, ip, time, attacktype) {
 
     var reportTemplate = fs.readFileSync('./template/report.txt','utf8');
 
@@ -26,9 +28,9 @@ function PostCode(codestring) {
 
     // An object of options to indicate where to post to
     var post_options = {
-        host: 'https://www.t-sec-radar.de',
-        port: '443',
-        path: '/ews-0.1/alert/postSimpleMessage',
+        host: 'myone',
+        port: '80',
+        path: '/ews-0.1/alert/postSimpleMessage.php',
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -42,6 +44,10 @@ function PostCode(codestring) {
         res.on('data', function (chunk) {
             console.log('Response: ' + chunk);
         });
+    });
+
+    post_req.on('error', function(e) {
+        console.log('problem with request: ' + e.message);
     });
 
     // post the data

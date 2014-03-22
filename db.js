@@ -19,10 +19,10 @@ client.on("error", function (err) {
 function store(url)
 {
 
-    client.set("NP_IP_" + url, "dummy", function ()
+    client.set("NP_URL_" + url, "dummy", function ()
         {
             var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-            console.log(time + ": Stored IP " + url);
+            console.log(time + ": Stored URL " + url);
         }
     );
 }
