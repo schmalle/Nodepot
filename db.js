@@ -2,6 +2,9 @@
  * Created by mschmall on 09/02/14.
  */
 
+var moment = require("moment");
+
+
 var redis = require("redis"),
     client = redis.createClient();
 
@@ -18,7 +21,8 @@ function store(url)
 
     client.set("NP_IP_" + url, "dummy", function ()
         {
-            console.log("Stored IP " + url);
+            var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+            console.log(time + ": Stored IP " + url);
         }
     );
 }
@@ -27,11 +31,11 @@ function store(url)
 /** returns a value for a key **/
 function get(url)
 {
-    client.get("NP_IP_"+url, function (error, value)
+    client.get("NP_URL_"+url, function (error, value)
     {
         if (value == null)
         {
-            console.log("db.get(): ERROR: Key NP_IP_" + url + " not existing...");
+            console.log("db.get(): ERROR: Key NP_URL_" + url + " not existing...");
         }
         else
         {
@@ -47,20 +51,25 @@ function get(url)
 /** return all data matching a certain key **/
 function getall()
 {
-    return client.keys("NP_IP_*");
+    return client.keys("NP_URL_*");
 }
 
 
-function setstore(ip)
+function setstore(url)
 {
-    client.sadd("NP_IP", ip);
+    client.sadd("NP_URL", url);
 }
 
 
 /** return all data from the NP_IP set **/
-function setgetall(response)
+function setgetall(response, attack)
 {
-    client.smembers("NP_IP", function (error, value)
+
+    var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+    console.log(time + ": Updating local file with attack data");
+
+    client.smembers("NP_URL", function (error, value)
     {
 
         var a = "";
@@ -88,26 +97,29 @@ function setgetall(response)
 
 /**
  * simple wrapper for the redis call calling sub routines depending on the result
- * @param ip
+ * @param url
  * @param positive
  * @param negative
  * @param response
  */
-function ismember(ip, positive, negative, response)
+function ismember(url, positive, negative, response)
 {
 
-    client.sismember("NP_IP", ip, function (error, value)
+    var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+
+    client.sismember("NP_URL", url, function (error, value)
     {
 
-        console.log("Result from sismember call for ip " + ip + ": value: " + value + " error: " + error)
+        console.log(time + ": Result from sismember call for URL " + url + ": value: " + value + " error: " + error)
 
         if (1 == value)
         {
-            positive(ip, response);
+            positive(url, response);
         }
         else
         {
-            negative(ip, response);
+            negative(url, response);
         }
 
     });

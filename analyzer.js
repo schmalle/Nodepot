@@ -6,6 +6,7 @@
 var url = require("url");
 var db = require("./db");
 var S = require('string');
+var moment = require("moment");
 
 /**
  *
@@ -15,7 +16,7 @@ var S = require('string');
  */
 function URLExists(url, response)
 {
-    console.log("Starting URLExists with URL " + url);
+    console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Starting URLExists with URL " + url);
 }
 
 /**
@@ -42,20 +43,27 @@ function analyze(request, response)
 {
     var query = url.parse(request.url).query;
 
-    console.log("Found query: " + query);
 
-    var externalReference =  (S(query).contains("http://"));
-    var directoryTraversal = (S(query).contains(".."));
-    var crossSiteScripting = (S(query).contains("alert("));
+    if (query != null) {
 
-    if (externalReference || directoryTraversal || crossSiteScripting)
-    {
-         console.log("Some form of attack found");
-         db.ismember(path, URLExists, URLNotExists, response);
-    }
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + request.url);
+
+        var externalReference = (S(query).contains("http://"));
+        var directoryTraversal = (S(query).contains(".."));
+        var crossSiteScripting = (S(query).contains("alert("));
+
+        if (externalReference || directoryTraversal || crossSiteScripting) {
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Some form of attack found");
+            db.ismember(request.url, URLExists, URLNotExists, response);
+        }
+        else {
+            URLExists(response);
+        }
+
+    }   // if query != null
     else
     {
-        URLExists(response);
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query: ");
     }
 
 }

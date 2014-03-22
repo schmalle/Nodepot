@@ -1,0 +1,30 @@
+ <EWS-SimpleMessage version=1.0>
+ <Authentication>
+ <username>USERNAME</username>
+ <token>PASSWORD</token>
+ </Authentication>
+ <Alert messageid="HOST">
+ <Analyzer id="IDENT" name="HOST"/>
+ <CreateTime tz="0100">TIME</CreateTime>
+ <Source>
+ <Node>
+ <Address category="ipv4-addr"><address>IP</address>
+ </Address>
+ </Node>
+ </Source>
+
+ <Target ident="HOST">
+ <Node>
+ <Address category="ipv4-addr">IP</Address>
+ </Node>
+ <Service ident="0">
+ <dport>80</dport>
+ </Service>
+ </Target>
+ <Classification origin="ATTACKTYPE" ident="ATTACKTYPE" text="ATTACKTYPE"/>
+ <AdditionalData type="string" meaning="user-agent">Mozilla/5.0</AdditionalData>
+ <AdditionalData type="string" meaning="header">WEBATTACK</AdditionalData>
+ <AdditionalData type="string" meaning="request">REQ</AdditionalData>
+ <AdditionalData type="string" meaning="domain"></AdditionalData>
+ </Alert>
+ </EWS-SimpleMessage>
