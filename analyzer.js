@@ -63,7 +63,7 @@ function analyze(request, response)
     }   // if query != null
     else
     {
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query: ");
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query from IP: " + request.connection.remoteAddress);
     }
 
 }
