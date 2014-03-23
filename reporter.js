@@ -20,7 +20,7 @@ function report(username, password, host, ip, time, attacktype) {
 }
 
 
-/** code taken from http://stackoverflow.com/questions/6158933/how-to-make-an-http-post-request-in-node-js **/
+/** partly code taken from http://stackoverflow.com/questions/6158933/how-to-make-an-http-post-request-in-node-js **/
 
 
 function PostCode(codestring) {

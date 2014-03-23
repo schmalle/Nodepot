@@ -1,19 +1,35 @@
 Nodepot
 =======
 
-A nodejs web application honeypot
+Version 0.1: 23.03.2014
 
-Note for Raspberry PI:
+- not production ready !!! -
+
+A nodejs web application honeypot designed to run in small environments
+
+Needed things (Ubuntu/Debian):
+------------------------------
 
 apt-get install nodejs redis-server will install all needed components.
-npm config set registry http://registry.npmjs.org/
-
-will adjust the npm so that you can install
-all stuff.
-
 npm install --save string crypto redis moment
 
-will all needed node.js files.
+If the npm call fails, run the following code to fix the entry.
+
+npm config set registry http://registry.npmjs.org/
+
+Startup
+-------
+
+nodejs app.js will start the server.
+
+
+Contact:
+--------
+
+markus-schmall@t-online
+flakedev on twitter
+
+
 
 
 

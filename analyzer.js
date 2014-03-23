@@ -54,7 +54,7 @@ function analyze(request, response)
 
         if (externalReference || directoryTraversal || crossSiteScripting) {
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + request.url + " from IP: " + request.connection.remoteAddress);
-            db.ismember(request.url, URLExists, URLNotExists, response);
+            db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response);
         }
         else {
             URLExists(response);
