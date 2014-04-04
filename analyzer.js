@@ -46,14 +46,16 @@ function analyze(request, response)
 
     if (query != null) {
 
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + request.url);
+        query = unescape(query);
+
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + unescape(request.url));
 
         var externalReference = (S(query).contains("http://"));
         var directoryTraversal = (S(query).contains(".."));
         var crossSiteScripting = (S(query).contains("alert("));
 
         if (externalReference || directoryTraversal || crossSiteScripting) {
-            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + request.url + " from IP: " + request.connection.remoteAddress);
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response);
         }
         else {
