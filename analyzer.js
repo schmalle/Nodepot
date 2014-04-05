@@ -42,13 +42,14 @@ function URLNotExists(url, response)
 function analyze(request, response)
 {
     var query = url.parse(request.url).query;
+    var ua = request.headers['user-agent'];
 
 
     if (query != null) {
 
         query = unescape(query);
 
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + unescape(request.url));
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + unescape(request.url) + " and USER AGENT: " + ua);
 
         var externalReference = (S(query).contains("http://"));
         var directoryTraversal = (S(query).contains(".."));
@@ -65,7 +66,7 @@ function analyze(request, response)
     }   // if query != null
     else
     {
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query from IP: " + request.connection.remoteAddress);
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query (/) from IP: " + request.connection.remoteAddress  + " and USER AGENT: " + ua);
     }
 
 }
