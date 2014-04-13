@@ -6,7 +6,14 @@ var sys = require("sys"),
     events = require("events");
 
 
- exports.download = function (url, dest, cb) {
+/*
+    download export function
+    url
+    dest    target file name
+    cb      call back
+ */
+ exports.download = function (url, dest, cb)
+ {
         var file = fs.createWriteStream(dest);
         var request = http.get(url, function (response) {
             response.pipe(file);
@@ -15,5 +22,5 @@ var sys = require("sys"),
                 cb();
             });
         });
-    }
+ }
 

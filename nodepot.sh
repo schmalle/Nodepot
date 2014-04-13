@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cmdLine="ps -efa | grep nodejs | wc -l";
-cmdLine="/opt/nodepot_git/corecheck.sh";
+cmdLine="/opt/nodepot_git/Nodepot/corecheck.sh";
 
 number=$(eval $cmdLine);
 
