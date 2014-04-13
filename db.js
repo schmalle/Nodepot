@@ -15,7 +15,7 @@ client.on("error", function (err) {
 });
 
 
-/** just store the input value with a prefixed NP_IP_ **/
+/** just store the input value with a prefixed NP_IP_
 function store(url)
 {
 
@@ -27,8 +27,9 @@ function store(url)
     );
 }
 
+ **/
 
-/** returns a value for a key **/
+/** returns a value for a key
 function get(url)
 {
     client.get("NP_URL_"+url, function (error, value)
@@ -47,19 +48,26 @@ function get(url)
     });
 }
 
+**/
 
-/** return all data matching a certain key **/
+
+/** return all data matching a certain key
 function getall()
 {
     return client.keys("NP_URL_*");
 }
 
+ **/
 
 function setstore(url)
 {
     client.sadd("NP_URL", url);
 }
 
+function setstoreMaliciousURL(url)
+{
+    client.sadd("NP_URL_MALICIOUS", url);
+}
 
 /** return all data from the NP_IP set **/
 function setgetall(response, attack)
@@ -126,10 +134,46 @@ function ismember(url, positive, negative, response)
 
 }
 
-exports.store = store;
+
+/**
+ * simple wrapper for the redis call calling sub routines depending on the result
+ * @param url
+ * @param dest (for filesystem)
+ * @param storage code
+ * @param callBack from storage code
+ */
+function isMemberMaliciousURL(url, dest, storeCode, callBack)
+{
+
+    var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+
+    client.sismember("NP_URL_MALICIOUS", url, function (error, value)
+    {
+
+        console.log(time + ": Result from sismember call for URL " + url + ": value: " + value + " error: " + error)
+
+        if (1 == value)
+        {
+            console.log("URL " + url + " already known....");
+        }
+        else
+        {
+            storeCode(url, dest, callBack);
+            setstoreMaliciousURL(url);
+        }
+
+    });
+
+}
+
+
+/** exports.store = store;
 exports.getall = getall;
-exports.get=get
+exports.get=get**/
 
 exports.setstore=setstore;
 exports.setgetall=setgetall;
 exports.ismember=ismember;
+exports.setstoreMaliciousURL=setstoreMaliciousURL;
+exports.isMemberMaliciousURL=isMemberMaliciousURL;
