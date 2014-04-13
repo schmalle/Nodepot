@@ -4,7 +4,7 @@ var fs = require('fs');
 var S = require('string');
 
 
-function report(username, password, host, ip, time, attacktype) {
+function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL) {
 
     var reportTemplate = fs.readFileSync('./template/report.txt','utf8');
 
@@ -15,22 +15,26 @@ function report(username, password, host, ip, time, attacktype) {
     var stage5 = S(stage4).replaceAll('TIME', time).s
     var stage6 = S(stage5).replaceAll('ATTACKTYPE', attacktype).s
 
-    PostCode(stage6);
+    PostCode(stage6, mode, alarmHost, alarmURL);
 
 }
 
 
 /** partly code taken from http://stackoverflow.com/questions/6158933/how-to-make-an-http-post-request-in-node-js **/
 
+/*
+    POST the data to the server or to the console, depending on the mode parameter (test)
+ */
+function PostCode(codestring, mode, alarmHost, alarmURL) {
 
-function PostCode(codestring) {
+
 
 
     // An object of options to indicate where to post to
     var post_options = {
-        host: 'myone',
+        host: alarmHost,
         port: '80',
-        path: '/ews-0.1/alert/postSimpleMessage.php',
+        path: alarmURL, //'/ews-0.1/alert/postSimpleMessage.php',
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -38,21 +42,30 @@ function PostCode(codestring) {
         }
     };
 
-    // Set up the request
-    var post_req = http.request(post_options, function(res) {
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('Response: ' + chunk);
+
+    if (mode.indexOf("production") > -1) {
+
+        // Set up the request
+        var post_req = http.request(post_options, function (res) {
+            res.setEncoding('utf8');
+            res.on('data', function (chunk) {
+                console.log('Response: ' + chunk);
+            });
         });
-    });
 
-    post_req.on('error', function(e) {
-        console.log('problem with request: ' + e.message);
-    });
+        post_req.on('error', function (e) {
+            console.log('problem with request: ' + e.message);
+        });
 
-    // post the data
-    post_req.write(codestring);
-    post_req.end();
+        // post the data
+        post_req.write(codestring);
+        post_req.end();
+
+    }
+    else
+    {
+        console.log(codestring);
+    }
 
 }
 
