@@ -1,5 +1,4 @@
 add right / correct check for LFI / RFI etc. in the analyzer
 add correct downloading / hashing function
 add correct logging to file
-add correct reporting home code (DTAG early warning system)
 add config management stuff
