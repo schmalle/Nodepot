@@ -1,9 +1,23 @@
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
+var path = require('path');
 var ana = require("./analyzer");
+var config = require('./template/config')
 
-function start(port, configFileName) {
+
+
+var mimeTypes = {
+    "html": "text/html",
+    "jpeg": "image/jpeg",
+    "jpg": "image/jpeg",
+    "png": "image/png",
+    "js": "text/javascript",
+    "css": "text/css"};
+
+
+
+function start() {
     function onRequest(request, response) {
 
         /* set the correct content type */
@@ -20,7 +34,7 @@ function start(port, configFileName) {
         response.end();
     }
 
-    http.createServer(onRequest).listen(port);
+    http.createServer(onRequest).listen(config.port);
     console.log("Server has started.");
 }
 
