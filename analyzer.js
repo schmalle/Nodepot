@@ -7,6 +7,9 @@ var url = require("url");
 var db = require("./db");
 var S = require('string');
 var moment = require("moment");
+var dl = require("./downloader");
+var config = require('/opt/nodepot/config');
+
 
 /**
  *
@@ -16,7 +19,8 @@ var moment = require("moment");
  */
 function URLExists(url, response)
 {
-    console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Starting URLExists with URL " + url);
+    if (config.verbose)
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Starting URLExists with URL " + url);
 }
 
 /**
@@ -58,6 +62,14 @@ function analyze(request, response)
         if (externalReference || directoryTraversal || crossSiteScripting) {
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response);
+
+            // now check all GET parameters
+            if (externalReference)
+            {
+
+                externalReferenceCheck(request, query);
+
+            }
         }
         else {
             URLExists(response);
@@ -68,6 +80,103 @@ function analyze(request, response)
     {
         console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query (/) from IP: " + request.connection.remoteAddress  + " and USER AGENT: " + ua);
     }
+
+}
+
+
+
+
+function externalReferenceCheck(request, query)
+{
+
+    // get start & max length
+
+    var runner = 0, countrunner = 0, endRunner = 0;
+    var len = query.length;
+    var count = S(query).count("http");
+
+    if (config.verbose)
+        console.log("Number of external references in URL " + query + ": " + count);
+
+    // iterate through the entire string
+    while (runner <= len -1)
+    {
+        if(query.indexOf("http://", runner) > -1)
+        {
+            runner = query.indexOf("http://", runner);
+            endRunner = query.indexOf("&", runner);
+
+            if (endRunner == -1)
+            {
+                endRunner = len;
+
+                if (config.verbose)
+                    console.log("Info: Last entry in query string found");
+            }
+
+
+            // fix
+            var externalURL = fixExternalURL(query, runner, endRunner);
+
+            runner = endRunner;
+            countrunner++;
+
+            // we must validate the filename, otherwise a potential directory traveral can happen
+            var fileName = fixFileName(externalURL);
+
+            if (config.verbose)
+                console.log("External reference " + countrunner + ": " + externalURL);
+
+            dl.download(externalURL, config.dl_location + fileName, dl.finishCallBack);
+
+
+        }
+        else
+        {   // set end value and force exit
+            runner = len;
+        }
+    }
+
+
+}
+
+
+/**
+ * extracts a filename if existing
+ * @param externalURL
+ * @returns {string}
+ */
+function fixFileName(externalURL)
+{
+    // we must validate the filename, otherwise a potential directory traveral can happen
+    var fileName = externalURL.substring(externalURL.lastIndexOf("/"));
+    var lastIndex = externalURL.lastIndexOf("/");
+    if (lastIndex == 6)
+        fileName = "index.html";
+
+
+    return fileName;
+}
+
+
+/**
+ * extracts the external url
+ * @param query
+ * @param runner
+ * @param endRunner
+ * @returns {string}
+ */
+function fixExternalURL(query, runner, endRunner)
+{
+    // somekind of dirty hack, substr somehow is bot working right on a Mac OS
+    var externalURL = query.substr(runner, endRunner);
+
+    if (S(externalURL).contains("&"))
+    {
+        externalURL = "http://" + S(externalURL).between('http://', '&').s
+    }
+
+    return externalURL;
 
 }
 
