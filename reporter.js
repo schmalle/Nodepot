@@ -43,6 +43,8 @@ function PostCode(codestring, mode, alarmHost, alarmURL) {
     };
 
 
+    // check for demo or production mode
+
     if (mode.indexOf("production") > -1) {
 
         // Set up the request
