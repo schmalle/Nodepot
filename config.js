@@ -1,23 +1,40 @@
 var fs = require("fs");
 
-function getUName(configFileName) {
+function getUNameEWS(configFileName) {
 }
 
-function getPassword(configFileName) {
+function getPasswordEWS(configFileName) {
 }
 
-function getServer(configFileName) {
+function getServerEWS(configFileName) {
 }
 
-function getPort(configFileName) {
+function getUNameEMail(configFileName) {
 }
 
-function getPath(configFileName) {
+function getPasswordEMail(configFileName) {
 }
 
+function getServerEMail(configFileName) {
+}
 
-exports.getUName = getUName;
-exports.getPassword = getPassword;
-exports.getServer = getServer;
-exports.getPort = getPort;
-exports.getPath = getPath;
+function getPortEWS(configFileName) {
+}
+
+function getPathEWS(configFileName) {
+}
+
+/* demo or production */
+function getMode(configFileName) {
+
+}
+
+exports.getUNameEWS = getUNameEWS;
+exports.getPasswordEWS = getPasswordEWS;
+exports.getServerEWS = getServerEWS;
+exports.getPortEWS = getPortEWS;
+exports.getPathEWS = getPathEWS;
+exports.getMode = getMode
+exports.getUNameEMail = getUNameEMail;
+exports.getPasswordEMail = getPasswordEMail;
+exports.getServerEMail = getServerEMail;
