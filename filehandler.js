@@ -1,6 +1,8 @@
 var filename = process.argv[2];
 var crypto = require('crypto');
 var fs = require('fs');
+var config = require('/opt/nodepot/config');
+
 
 var shasum = crypto.createHash('sha1');
 
