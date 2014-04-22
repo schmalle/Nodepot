@@ -9,6 +9,7 @@ var S = require('string');
 var moment = require("moment");
 var dl = require("./downloader");
 var config = require('/opt/nodepot/config');
+var crypto = require('crypto');
 
 
 /**
@@ -154,8 +155,10 @@ function fixFileName(externalURL)
     if (lastIndex == 6)
         fileName = "index.html";
 
+    var shasum = crypto.createHash('sha1');
+    shasum.update(externalURL);
 
-    return fileName;
+    return shasum.digest('hex') + "_" + fileName;
 }
 
 
