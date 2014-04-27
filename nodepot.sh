@@ -14,7 +14,7 @@ case $number in
 
 1)  echo "NodePot not running"
     cd /opt/nodepot_git/Nodepot
-    nodejs app.js >> /opt/nodepot.log &
+    nodejs app.js >> /var/log/nodepot.log &
     ;;
 *)  echo "Unknown situation"
     ;;

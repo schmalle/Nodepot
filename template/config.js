@@ -1,3 +1,7 @@
+/**
+ *  configuration file for nodepot, basic web honeypot
+ */
+
 var config = {}
 
 config.twitter = {};
@@ -13,6 +17,7 @@ config.mode = "test";                               // test // production
 config.verbose = true;                              // true // false
 config.port = 8888;
 config.dl_location = "/opt/nodepot/downloads/";
+config.home_ip = "192.168.178";                     // from this origin the status side can be seen
 
 
 module.exports = config;
