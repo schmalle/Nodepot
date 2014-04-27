@@ -33,8 +33,12 @@ function start() {
         {
             // show UI
 
+            var defaultTemplateStart = fs.readFileSync('./html/adminstart.html', 'utf8');
             var learnedStuff = fs.readFileSync("/var/log/nodepot.log", 'utf8');
+            var defaultTemplateEnd = fs.readFileSync('./html/adminend.html', 'utf8');
+            response.write(defaultTemplateStart);
             response.write(learnedStuff);
+            response.write(defaultTemplateEnd);
 
         }
         else
