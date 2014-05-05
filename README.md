@@ -14,6 +14,7 @@ apt-get install nodejs redis-server curl will install all needed components.
 npm install --save string crypto redis moment
 (NOT NEEDED) npm install nodemailer --save
 npm install emailjs --save
+npm install twit
 
 If the npm call fails, run the following code to fix the entry.
 

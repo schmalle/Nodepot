@@ -2,17 +2,28 @@
  *  configuration file for nodepot, basic web honeypot
  */
 
-var config = {}
+var config = {};
 
 config.twitter = {};
+
+
+config.twitter.access_token = "";
+config.twitter.access_token_secret = "";
+config.twitter.api_key = "";
+config.twitter.api_key_secret = "";
+config.twitter.use = "no";
+
 config.email = {};
 config.ews = {};
 
 config.email.name = "emailname";
 config.email.server = "emailserver";
 config.email.password = "emailpassword";
+config.ews.host = "127.0.0.1";
 config.ews.port = 443;
 config.ews.path = "test.php";
+config.ews.username = "";
+config.ews.password = "";
 config.mode = "test";                               // test // production
 config.verbose = true;                              // true // false
 config.port = 8888;
