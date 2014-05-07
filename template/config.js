@@ -12,6 +12,7 @@ config.twitter.access_token_secret = "";
 config.twitter.api_key = "";
 config.twitter.api_key_secret = "";
 config.twitter.use = "no";
+config.twitter.verbose = "no";
 
 config.email = {};
 config.ews = {};

@@ -3,9 +3,10 @@ var url = require("url");
 var fs = require("fs");
 var path = require('path');
 var ana = require("./analyzer");
-var config = require('./template/config');
+var config = require('/opt/nodepot/config');
 var S = require('string');
-
+var twitter = require("./twitter");
+var moment = require("moment");
 
 
 
@@ -52,6 +53,12 @@ function start() {
 
             response.write(defaultTemplate);
             response.write(learnedStuff);
+
+            if (config.twitter.verbose == "yes")
+            {
+                twitter.tweet(moment().format('MMMM Do YYYY, h:mm:ss a') + "(Nodepot): Found request from ip " + ip);
+            }
+
 
         }
         response.end();
