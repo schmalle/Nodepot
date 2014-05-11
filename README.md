@@ -20,6 +20,9 @@ If the npm call fails, run the following code to fix the entry.
 
 npm config set registry http://registry.npmjs.org/
 
+Copy an adapted version of the config.js file (./template) to /opt/nodepot/config.js
+
+
 Startup
 -------
 
