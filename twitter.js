@@ -14,7 +14,8 @@ function tweet(message) {
 //  tweet 'hello world!'
 //
     T.post('statuses/update', { status: message }, function (err, data, response) {
-        console.log(data)
+        // dont log data, it is too long
+        //console.log(data)
     })
 
 
