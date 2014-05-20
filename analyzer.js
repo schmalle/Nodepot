@@ -131,7 +131,7 @@ function checkRules(url)
     }
 
 
-    return "null";
+    return null;
 
 }   // checkrules
 

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/rules.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer.js" afterPath="$PROJECT_DIR$/analyzer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/reportertest.js" afterPath="$PROJECT_DIR$/test/reportertest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/dork.html" afterPath="$PROJECT_DIR$/html/dork.html" />
     </list>
     <ignored path="Nodepot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,11 +66,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="analyzer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="analyzer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyzer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8492462" vertical-offset="922" max-vertical-offset="3645">
-              <caret line="84" column="90" selection-start-line="84" selection-start-column="90" selection-end-line="84" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1263" max-vertical-offset="3645">
+              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dork.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/dork.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,19 +121,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="870">
               <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="735">
-              <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -212,6 +207,7 @@
         <option value="$PROJECT_DIR$/test/reportertest.js" />
         <option value="$PROJECT_DIR$/template/rules.js" />
         <option value="$PROJECT_DIR$/analyzer.js" />
+        <option value="$PROJECT_DIR$/html/dork.html" />
       </list>
     </option>
   </component>
@@ -281,6 +277,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nodepot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Nodepot" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -654,12 +664,12 @@
       <workItem from="1400058198279" duration="128000" />
       <workItem from="1400080617044" duration="372000" />
       <workItem from="1400156940752" duration="77000" />
-      <workItem from="1400240674699" duration="2884000" />
+      <workItem from="1400240674699" duration="3297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104796000" />
+    <option name="totallyTimeSpent" value="105209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="819" extended-state="6" />
@@ -672,7 +682,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39614856" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39614856" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16380544" sideWeight="0.5122449" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -768,11 +778,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/analyzer.js</url>
-          <line>122</line>
-          <option name="timeStamp" value="37" />
+          <line>74</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="38" />
+      <option name="time" value="39" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -982,13 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/dork.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/downloads/downloads.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
@@ -1151,8 +1154,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8492462" vertical-offset="922" max-vertical-offset="3645">
-          <caret line="84" column="90" selection-start-line="84" selection-start-column="90" selection-end-line="84" selection-end-column="90" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1263" max-vertical-offset="3645">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/dork.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
