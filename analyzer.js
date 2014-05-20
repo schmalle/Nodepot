@@ -10,6 +10,7 @@ var moment = require("moment");
 var dl = require("./downloader");
 var config = require('/opt/nodepot/config');
 var crypto = require('crypto');
+var rules = require("./template/rules");
 
 
 /**
@@ -50,6 +51,7 @@ function analyze(request, response)
     var ua = request.headers['user-agent'];
 
 
+
     if (query != null) {
 
         query = unescape(query);
@@ -60,9 +62,33 @@ function analyze(request, response)
         var directoryTraversal = (S(query).contains(".."));
         var crossSiteScripting = (S(query).contains("alert("));
 
-        if (externalReference || directoryTraversal || crossSiteScripting) {
+        if (externalReference || directoryTraversal || crossSiteScripting)
+        {
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response);
+
+
+            // moment().format('YYYY-MM-DD h:mm:ss a'
+
+            var checkMe = checkRules(query);
+
+            if (checkMe == null)
+            {
+                if (externalReference)
+                    checkMe = "RFI attack";
+                if (directoryTraversal)
+                    checkMe = "Directory traveral";
+                if (crossSiteScripting)
+                    checkMe = "Cross Site Scripting";
+            }
+
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
+
+
+            // now send to central DB server
+
+
+
 
             // now check all GET parameters
             if (externalReference)
@@ -84,6 +110,30 @@ function analyze(request, response)
 
 }
 
+
+/**
+ *
+ * @param url
+ * @returns {*}
+ */
+function checkRules(url)
+{
+
+
+    for(var i=0;i<rules.attackStrings.length;i++)
+    {
+
+        if (S(url).contains(rules.attackStrings[i]))
+            return rules.attackStrings[i++];
+
+        i++;
+
+    }
+
+
+    return "null";
+
+}   // checkrules
 
 
 
