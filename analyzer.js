@@ -11,7 +11,7 @@ var dl = require("./downloader");
 var config = require('/opt/nodepot/config');
 var crypto = require('crypto');
 var rules = require("./template/rules");
-var server = require("./../reporter");
+var server = require("./reporter");
 
 
 
@@ -87,7 +87,7 @@ function analyze(request, response)
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
 
 
-            server.report(config.ews.username, config.ews.password, config.name_hp, "request.connection.remoteAddress", moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port);
+//            server.report(config.ews.username, config.ews.password, config.name_hp, "request.connection.remoteAddress", moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port);
 
 
 
