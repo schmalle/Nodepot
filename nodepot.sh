@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cmdLine="ps -efa | grep nodejs | wc -l";
-cmdLine="/opt/nodepot_git/Nodepot/corecheck.sh";
+cmdLine="/opt/Nodepot/corecheck.sh";
 
 number=$(eval $cmdLine);
 
@@ -13,7 +13,7 @@ case $number in
     ;;
 
 1)  echo "NodePot not running"
-    cd /opt/nodepot_git/Nodepot
+    cd /opt/Nodepot
     nodejs app.js >> /var/log/nodepot.log &
     ;;
 *)  echo "Unknown situation"

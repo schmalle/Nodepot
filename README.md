@@ -22,6 +22,8 @@ npm config set registry http://registry.npmjs.org/
 
 Copy an adapted version of the config.js file (./template) to /opt/nodepot/config.js
 
+Standard install directory should be /opt/Nodepot
+
 
 Startup
 -------
