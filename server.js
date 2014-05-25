@@ -54,7 +54,7 @@ function start() {
             response.write(defaultTemplate);
             response.write(learnedStuff);
 
-            if (config.twitter.verbose == "yes")
+            if (config.twitter.verbose == "yes" && statusAnalyze != null)
             {
                 twitter.tweet(moment().format('MMMM Do YYYY, h:mm:ss a') + "(Nodepot): Found request from ip " + ip);
             }

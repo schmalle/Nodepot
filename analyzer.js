@@ -51,6 +51,7 @@ function analyze(request, response)
 {
     var query = url.parse(request.url).query;
     var ua = request.headers['user-agent'];
+    var checkMe = null;
 
 
 
@@ -72,7 +73,7 @@ function analyze(request, response)
 
             // moment().format('YYYY-MM-DD h:mm:ss a'
 
-            var checkMe = checkRules(query);
+            checkMe = checkRules(query);
 
             if (checkMe == null)
             {
@@ -108,6 +109,8 @@ function analyze(request, response)
     {
         console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query (/) from IP: " + request.connection.remoteAddress  + " and USER AGENT: " + ua);
     }
+
+    return checkMe;
 
 }
 
