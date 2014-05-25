@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer.js" afterPath="$PROJECT_DIR$/analyzer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/rules.js" afterPath="$PROJECT_DIR$/template/rules.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="Nodepot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,8 +88,8 @@
       <file leaf-file-name="rules.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/rules.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08510638" vertical-offset="0" max-vertical-offset="705">
-              <caret line="4" column="116" selection-start-line="4" selection-start-column="116" selection-end-line="4" selection-end-column="116" />
+            <state vertical-scroll-proportion="0.10638298" vertical-offset="0" max-vertical-offset="705">
+              <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -658,12 +656,12 @@
       <workItem from="1400615266897" duration="1183000" />
       <workItem from="1400699375176" duration="456000" />
       <workItem from="1400922550667" duration="15000" />
-      <workItem from="1400922655310" duration="1671000" />
+      <workItem from="1400922655310" duration="2167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108962000" />
+    <option name="totallyTimeSpent" value="109458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="825" extended-state="6" />
@@ -1118,14 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nodepot.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.222222" vertical-offset="0" max-vertical-offset="765">
@@ -1161,10 +1151,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nodepot.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template/rules.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08510638" vertical-offset="0" max-vertical-offset="705">
-          <caret line="4" column="116" selection-start-line="4" selection-start-column="116" selection-end-line="4" selection-end-column="116" />
+        <state vertical-scroll-proportion="0.10638298" vertical-offset="0" max-vertical-offset="705">
+          <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
           <folding />
         </state>
       </provider>
