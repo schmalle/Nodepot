@@ -85,7 +85,7 @@ function setgetall(response, attack)
 
         value.forEach(function (attack) {
 
-            console.log("Found value: " + attack);
+            //console.log("Found value: " + attack);
             response.write(attack + "<br>");
             a = a + attack + "<br>";
 
