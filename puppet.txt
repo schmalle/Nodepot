@@ -1,0 +1,11 @@
+#
+# this file contains the entire installation routine / recipe for NodeJS
+# it has been tested with Ubuntu 14.04 server in a vagrant environment
+# vagrantfile is supplied
+#
+# base box for vagrant: vagrant box add Ubuntu1404 https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box
+#
+
+$enhancers = [ "nodejs", "npm", "redis-server" ]
+
+package { $enhancers: ensure => "installed" }

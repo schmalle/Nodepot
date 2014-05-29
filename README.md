@@ -25,6 +25,9 @@ Copy an adapted version of the config.js file (./template) to /opt/nodepot/confi
 Standard install directory should be /opt/Nodepot
 
 
+
+
+
 Startup
 -------
 
