@@ -4,14 +4,14 @@
         <token>yyy</token>
     </Authentication>
  <Alert>
-   <Analyzer id="42007"/>
+   <Analyzer id="HOST"/>
    <CreateTime tz="+0200">TIME</CreateTime>
    <Source category="ipv4" port="" protocol="tcp">IP</Source>
    <Target category="ipv4" port="80" protocol="tcp">87.106.79.10</Target>
-   <Request type="" text="">action=activity_widget_filter%26page=1%26exclude%3d1)and(1=0)UNION(SELECT(1),(2),</Request>
+   <Request type="" text="ATTACKTYPE</Request>
    <Classification origin="vendor-specific" ident="sip-01" text="ModSecurity"/>
    <AdditionalData type="string" meaning="httpmethod">GET</AdditionalData>
-   <AdditionalData type="string" meaning="host">software-schrubber.de</AdditionalData>
+   <AdditionalData type="string" meaning="host">HOST</AdditionalData>
  </Alert>
 </EWS-SimpleMessage>
 

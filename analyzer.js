@@ -55,11 +55,11 @@ function analyze(request, response)
 
 
 
-    if (query != null) {
+    if (query != null)
+    {
 
         query = unescape(query);
 
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + unescape(request.url) + " and USER AGENT: " + ua);
 
         var externalReference = (S(query).contains("http://"));
         var directoryTraversal = (S(query).contains(".."));
@@ -80,7 +80,7 @@ function analyze(request, response)
                 if (externalReference)
                     checkMe = "RFI attack";
                 if (directoryTraversal)
-                    checkMe = "Directory traveral";
+                    checkMe = "Directory traversal";
                 if (crossSiteScripting)
                     checkMe = "Cross Site Scripting";
             }
@@ -100,7 +100,10 @@ function analyze(request, response)
 
             }
         }
-        else {
+        else
+        {
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + unescape(request.url) + " and USER AGENT: " + ua);
+
             URLExists(response);
         }
 

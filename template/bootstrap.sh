@@ -4,4 +4,5 @@
 # Vagrant provisioning script
 #
 
-echo "hello";
+puppet module install puppetlabs-nodejs
+puppet apply /vagrant/puppet.txt

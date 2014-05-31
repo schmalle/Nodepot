@@ -8,4 +8,12 @@
 
 $enhancers = [ "nodejs", "npm", "redis-server" ]
 
+$npmEnhancers = ["moment", "twit", "redis", "crypto", "nodemailer", "emailjs"]
 package { $enhancers: ensure => "installed" }
+
+package { $npmEnhancers:
+  ensure   => installed,
+  provider => 'npm',
+}
+
+
