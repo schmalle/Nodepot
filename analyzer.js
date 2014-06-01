@@ -65,15 +65,15 @@ function analyze(request, response)
         var directoryTraversal = (S(query).contains(".."));
         var crossSiteScripting = (S(query).contains("alert("));
 
-        if (externalReference || directoryTraversal || crossSiteScripting)
+        checkMe = checkRules(unescape(request.url));
+
+        if (externalReference || directoryTraversal || crossSiteScripting || checkMe != null)
         {
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response);
 
 
             // moment().format('YYYY-MM-DD h:mm:ss a'
-
-            checkMe = checkRules(unescape(request.url));
 
             console.log("unecape url:" + unescape(request.url) + " decodeuri: " + decodeURI(request.url));
 
@@ -86,6 +86,8 @@ function analyze(request, response)
                 if (crossSiteScripting)
                     checkMe = "Cross Site Scripting";
             }
+
+
 
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
 
