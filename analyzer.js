@@ -75,6 +75,8 @@ function analyze(request, response)
 
             checkMe = checkRules(unescape(request.url));
 
+            console.log("unecape url:" + unescape(request.url) + " decodeuri: " + decodeURI(request.url));
+
             if (checkMe == null)
             {
                 if (externalReference)

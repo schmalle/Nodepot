@@ -68,8 +68,8 @@
       <file leaf-file-name="analyzer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyzer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0867052" vertical-offset="1065" max-vertical-offset="3750">
-              <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.41473988" vertical-offset="943" max-vertical-offset="3780">
+              <caret line="82" column="43" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -661,12 +661,12 @@
       <workItem from="1400922655310" duration="3007000" />
       <workItem from="1401130503272" duration="4647000" />
       <workItem from="1401563778025" duration="13000" />
-      <workItem from="1401563803608" duration="2090000" />
+      <workItem from="1401563803608" duration="2659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117048000" />
+    <option name="totallyTimeSpent" value="117617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="6" />
@@ -756,7 +756,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/analyzer.js</url>
-          <line>184</line>
+          <line>186</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -770,12 +770,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/analyzer.js</url>
-          <line>95</line>
+          <line>97</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/analyzer.js</url>
-          <line>77</line>
+          <line>79</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1163,8 +1163,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyzer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0867052" vertical-offset="1065" max-vertical-offset="3750">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.41473988" vertical-offset="943" max-vertical-offset="3780">
+          <caret line="82" column="43" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
           <folding />
         </state>
       </provider>
