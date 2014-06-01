@@ -73,7 +73,7 @@ function analyze(request, response)
 
             // moment().format('YYYY-MM-DD h:mm:ss a'
 
-            checkMe = checkRules(query);
+            checkMe = checkRules(request.url);
 
             if (checkMe == null)
             {

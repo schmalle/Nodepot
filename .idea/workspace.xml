@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/config.js" afterPath="$PROJECT_DIR$/template/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/report.txt" afterPath="$PROJECT_DIR$/template/report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reporter.js" afterPath="$PROJECT_DIR$/reporter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer.js" afterPath="$PROJECT_DIR$/analyzer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/rules.js" afterPath="$PROJECT_DIR$/template/rules.js" />
     </list>
     <ignored path="Nodepot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="analyzer.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="analyzer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analyzer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3750">
-              <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.5202312" vertical-offset="705" max-vertical-offset="3750">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,8 +109,8 @@
       <file leaf-file-name="rules.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/rules.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -130,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reporter.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reporter.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reporter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23404256" vertical-offset="180" max-vertical-offset="885">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="885">
+              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -209,11 +208,11 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/template/bootstrap.sh" />
         <option value="$PROJECT_DIR$/puppet.txt" />
-        <option value="$PROJECT_DIR$/analyzer.js" />
-        <option value="$PROJECT_DIR$/template/rules.js" />
         <option value="$PROJECT_DIR$/template/report.txt" />
         <option value="$PROJECT_DIR$/template/config.js" />
         <option value="$PROJECT_DIR$/reporter.js" />
+        <option value="$PROJECT_DIR$/template/rules.js" />
+        <option value="$PROJECT_DIR$/analyzer.js" />
       </list>
     </option>
   </component>
@@ -663,12 +662,12 @@
       <workItem from="1400922655310" duration="3007000" />
       <workItem from="1401130503272" duration="4647000" />
       <workItem from="1401563778025" duration="13000" />
-      <workItem from="1401563803608" duration="827000" />
+      <workItem from="1401563803608" duration="1653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115785000" />
+    <option name="totallyTimeSpent" value="116611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="825" extended-state="6" />
@@ -1131,22 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1230" max-vertical-offset="3750">
-          <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/rules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
@@ -1165,8 +1148,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reporter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23404256" vertical-offset="180" max-vertical-offset="885">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="885">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/rules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5202312" vertical-offset="705" max-vertical-offset="3750">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
