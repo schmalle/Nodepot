@@ -31,5 +31,6 @@ config.port = 8888;
 config.dl_location = "/opt/nodepot/downloads/";
 config.home_ip = "192.168.178";                     // from this origin the status side can be seen
 config.name_hp = "Nodepot";
+config.my_ip = "127.0.0.1";
 
 module.exports = config;

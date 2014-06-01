@@ -6,9 +6,9 @@
  <Alert>
    <Analyzer id="HOST"/>
    <CreateTime tz="+0200">TIME</CreateTime>
-   <Source category="ipv4" port="" protocol="tcp">IP</Source>
-   <Target category="ipv4" port="80" protocol="tcp">87.106.79.10</Target>
-   <Request type="" text="ATTACKTYPE</Request>
+   <Source category="ipv4" port="" protocol="tcp">ATTACKER_IP</Source>
+   <Target category="ipv4" port="80" protocol="tcp">MY_IP</Target>
+   <Request type="" text="">ATTACKTYPE</Request>
    <Classification origin="vendor-specific" ident="sip-01" text="ModSecurity"/>
    <AdditionalData type="string" meaning="httpmethod">GET</AdditionalData>
    <AdditionalData type="string" meaning="host">HOST</AdditionalData>
