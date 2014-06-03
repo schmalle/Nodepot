@@ -16,7 +16,7 @@ function report(username, password, host, ip, time, attacktype, mode, alarmHost,
     var stage3 = S(stage2).replaceAll('HOST', host).s
     var stage4 = S(stage3).replaceAll('ATTACKER_IP', ip).s
     var stage5 = S(stage4).replaceAll('TIME', time).s
-    var stage6 = S(stage5).replaceAll('ATTACKTYPE', attacktype).s
+    var stage6 = S(stage5).replaceAll('ATTACKTYPE', encodeURI(attacktype)).s
     var stage7 = S(stage6).replaceAll('MY_IP', config.my_ip).s
 
     PostCode(stage7, mode, alarmHost, alarmURL, alarmPort);
