@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.1: 19.04.2014
+Version 0.1: 18.06.2014
 
 - not production ready !!! -
 
@@ -15,23 +15,32 @@ npm install --save string crypto redis moment
 (NOT NEEDED) npm install nodemailer --save
 npm install emailjs --save
 npm install twit
+npm install nodejs-hpfeeds
 
 If the npm call fails, run the following code to fix the entry.
 
 npm config set registry http://registry.npmjs.org/
 
-Copy an adapted version of the config.js file (./template) to /opt/nodepot/config.js
+IMPORTANT: Copy an adapted version of the config.js file (./template) to /opt/nodepot/config.js
 
 Standard install directory should be /opt/Nodepot
-
-
-
 
 
 Startup
 -------
 
-nodejs app.js will start the server.
+nodejs app.js will start the server. Please ensure that redis is running.
+
+
+Crontab
+-------
+
+If you want to include a check in your crontab for the running service, please add
+e.g. with a 5 minute interval the following call to your crontab:
+
+/opt/Nodepot/nodepot.sh
+
+Internally it will call corecheck.sh for some additional stuff.
 
 
 Contact:

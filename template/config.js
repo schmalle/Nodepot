@@ -33,4 +33,12 @@ config.home_ip = "192.168.178";                     // from this origin the stat
 config.name_hp = "Nodepot";
 config.my_ip = "127.0.0.1";
 
+config.hpfeeds = {};
+config.hpfeeds.port = 10000;
+config.hpfeeds.server = "hpfeeds.honeycloud.net";
+config.hpfeeds.channel = "test";
+config.hpfeeds.ident = "test";
+config.hpfeeds.secret = "test";
+
+
 module.exports = config;
