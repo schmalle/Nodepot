@@ -4,7 +4,7 @@ var fs = require('fs');
 var S = require('string');
 var util = require("sys");
 var request = require("request");
-var config = require("/opt/nodepot/config");
+var config = require("/etc/nodepot/config");
 
 
 function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL, alarmPort) {

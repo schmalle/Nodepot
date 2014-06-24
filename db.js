@@ -3,7 +3,7 @@
  */
 
 var moment = require("moment");
-var config = require('/opt/nodepot/config');
+var config = require('/etc/nodepot/config');
 
 
 var redis = require("redis"),

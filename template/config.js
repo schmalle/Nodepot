@@ -39,6 +39,7 @@ config.hpfeeds.server = "hpfeeds.honeycloud.net";
 config.hpfeeds.channel = "test";
 config.hpfeeds.ident = "test";
 config.hpfeeds.secret = "test";
+config.hpfeeds.use = "yes";
 
 
 module.exports = config;

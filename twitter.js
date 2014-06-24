@@ -1,5 +1,5 @@
 var Twit = require('twit');
-var config = require("/opt/nodepot/config");
+var config = require("/etc/nodepot/config");
 
 function tweet(message) {
 

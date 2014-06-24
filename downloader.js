@@ -10,7 +10,7 @@ var exec = require('child_process').exec;
 
 var S = require('string');
 var db = require("./db");
-var config = require('/opt/nodepot/config');
+var config = require('/etc/nodepot/config');
 
 
 

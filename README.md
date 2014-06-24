@@ -21,7 +21,7 @@ If the npm call fails, run the following code to fix the entry.
 
 npm config set registry http://registry.npmjs.org/
 
-IMPORTANT: Copy an adapted version of the config.js file (./template) to /opt/nodepot/config.js
+IMPORTANT: Copy an adapted version of the config.js file (./template) to /etc/nodepot/config.js
 
 Standard install directory should be /opt/Nodepot
 
