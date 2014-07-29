@@ -10,9 +10,9 @@ function tweet(message) {
         access_token_secret:  config.twitter.access_token_secret
     })
 
-//
-//  tweet 'hello world!'
-//
+
+    // update the status
+
     T.post('statuses/update', { status: message }, function (err, data, response) {
         // dont log data, it is too long
         //console.log(data)

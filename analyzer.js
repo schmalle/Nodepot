@@ -12,6 +12,7 @@ var config = require('/etc/nodepot/config');
 var crypto = require('crypto');
 var rules = require("./template/rules");
 var server = require("./reporter");
+var hpfeeds = require("nodejs-hpfeeds");
 
 
 
@@ -88,20 +89,17 @@ function analyze(request, response)
             }
 
 
-
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
 
-
             server.report(config.ews.username, config.ews.password, config.name_hp, request.connection.remoteAddress, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port);
+
 
 
 
             // now check all GET parameters
             if (externalReference)
             {
-
                 externalReferenceCheck(request, query);
-
             }
         }
         else

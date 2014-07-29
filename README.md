@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.1: 18.06.2014
+Version 0.3: 30.07.2014
 
 - not production ready !!! -
 
@@ -29,7 +29,7 @@ Standard install directory should be /opt/Nodepot
 Startup
 -------
 
-nodejs app.js will start the server. Please ensure that redis is running.
+nodejs app.js will start the server. Please ensure that redis (http://redis.io/) is running.
 
 
 Crontab

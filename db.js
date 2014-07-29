@@ -169,9 +169,7 @@ function isMemberMaliciousURL(url, dest, storeCode, callBack)
 }
 
 
-/** exports.store = store;
-exports.getall = getall;
-exports.get=get**/
+/** definition of exports **/
 
 exports.setstore=setstore;
 exports.setgetall=setgetall;
