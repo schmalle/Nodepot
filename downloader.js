@@ -22,6 +22,9 @@ function finishCallBack(url, dest)
 
 function executer(command)
 {
+
+    console.log("Executing command: " + command);
+
     var child = exec(command,
         function (error, stdout, stderr) {
             console.log('stdout: ' + stdout);
@@ -40,24 +43,8 @@ function executer(command)
  */
 function downloadStep2(url, dest, cb)
 {
-
+    console.log("curl -o " + dest + " " + url);
     executer("curl -o " + dest + " " + url);
-
-/*
-
-    For now disabled
-
-    var file = fs.createWriteStream(dest);
-    var request = http.get(url, function (response)
-    {
-        response.pipe(file);
-        file.on('finish', function () {
-            file.close();
-            cb(url, dest);
-        });
-    });
-
-*/
 
 }
 

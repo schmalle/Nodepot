@@ -1,3 +1,7 @@
+Before public release
+---------------------
+
+
 add right / correct check for LFI / RFI etc. in the analyzer
 add correct downloading / hashing function
 add correct logging to file

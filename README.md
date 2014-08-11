@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.3: 30.07.2014
+Version 0.3: 11.08.2014
 
 - not production ready !!! -
 
