@@ -1,0 +1,5 @@
+bootstrap.sh:   Vagrant bootstrap file
+config.js:      example config
+puppet.txt:     basic puppet script for local usage
+report.txt:     reporting template for DTAG early warning system
+rules.js:       Simple detection rules
