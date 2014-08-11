@@ -181,7 +181,7 @@ function externalReferenceCheck(request, query)
             runner = endRunner;
             countrunner++;
 
-            // we must validate the filename, otherwise a potential directory traveral can happen
+            // we must validate the filename, otherwise a potential directory traversal can happen
             var fileName = fixFileName(externalURL);
 
             if (config.verbose)
@@ -209,7 +209,7 @@ function externalReferenceCheck(request, query)
 function fixFileName(externalURL)
 {
     // we must validate the filename, otherwise a potential directory traveral can happen
-    var fileName = externalURL.substring(externalURL.lastIndexOf("/"));
+    var fileName = externalURL.substring(1+ externalURL.lastIndexOf("/"));
     var lastIndex = externalURL.lastIndexOf("/");
     if (lastIndex == 6)
         fileName = "index.html";
