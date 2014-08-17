@@ -1,4 +1,6 @@
 var Twit = require('twit');
+var moment = require("moment");
+
 var config = require("/etc/nodepot/config");
 
 function tweet(message) {
@@ -12,13 +14,21 @@ function tweet(message) {
 
 
     // update the status
+    var usetwitter = config.twitter.use;
 
-    T.post('statuses/update', { status: message }, function (err, data, response) {
-        // dont log data, it is too long
-        //console.log(data)
-    })
+    // check, if ews useage is defined, if not, skip and log
+    if ( typeof usetwitter !== 'undefined' && usetwitter == "yes") {
 
+        T.post('statuses/update', { status: message }, function (err, data, response) {
+            // dont log data, it is too long
+            //console.log(data)
+        })
 
+    }
+    else
+    {
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": No twitter reporting activated / configured");
+    }
 
 
 }

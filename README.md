@@ -5,7 +5,15 @@ Version 0.3: 11.08.2014
 
 - not production ready !!! -
 
-A nodejs web application honeypot designed to run in small environments
+A nodejs web application honeypot designed to run in small environments such as
+Raspberry PI / Cubietrack
+
+Background:
+-----------
+
+With Glaspot Lukas did a great job. Nodepot was initially started as a pure learning
+project for NodeJS.
+
 
 Needed things (Ubuntu/Debian):
 ------------------------------

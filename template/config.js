@@ -13,6 +13,7 @@ config.hpfeeds = {};
 //
 //
 
+config.twitter.use = "no";
 config.twitter.access_token = "";
 config.twitter.access_token_secret = "";
 config.twitter.api_key = "";
@@ -30,6 +31,7 @@ config.email.password = "emailpassword";
 //
 //
 
+config.ews.use = "no";
 config.ews.host = "127.0.0.1";
 config.ews.port = 443;
 config.ews.path = "test.php";

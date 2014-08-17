@@ -64,7 +64,8 @@ exports.download = function (url, dest, cb)
         badInput = true;
     }
 
-    if (!badInput) {
+    if (!badInput)
+    {
         url = S(url).toLowerCase(url);
         db.isMemberMaliciousURL(url, dest, downloadStep2, cb);
     }

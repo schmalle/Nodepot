@@ -5,6 +5,8 @@ var S = require('string');
 var util = require("sys");
 var request = require("request");
 var config = require("/etc/nodepot/config");
+var moment = require("moment");
+
 
 
 function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL, alarmPort) {
@@ -31,19 +33,33 @@ function report(username, password, host, ip, time, attacktype, mode, alarmHost,
  */
 function PostCode(codestring, mode, alarmHost, alarmURL, alarmPort) {
 
-    var query = "https://" + config.ews.host + ":" + config.ews.port + config.ews.path;
 
-    console.log("Body Input" + codestring);
-    console.log("Request URL:" + query);
+    var useews = config.ews.use;
 
-    request.post({
-        headers: {'content-type' : 'text/xml'},
-        url:     query,
-        body:    codestring
-    }, function(error, response, body){
-        console.log("body: " + body);
-        console.log("statuscode: " + response.statusCode);
-    });
+    // check, if ews useage is defined, if not, skip and log
+    if ( typeof useews !== 'undefined' && useews == "yes")
+    {
+
+        var query = "https://" + config.ews.host + ":" + config.ews.port + config.ews.path;
+
+        console.log("Body Input" + codestring);
+        console.log("Request URL:" + query);
+
+        request.post({
+            headers: {'content-type' : 'text/xml'},
+            url:     query,
+            body:    codestring
+        }, function(error, response, body){
+            console.log("body: " + body);
+            console.log("statuscode: " + response.statusCode);
+        });
+
+
+    }
+    else
+    {
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": No DTAG / EWS reporting activated / configured");
+    }
 
 
 

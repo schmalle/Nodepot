@@ -23,6 +23,7 @@ var mimeTypes = {
 function start() {
     function onRequest(request, response) {
 
+
         /* set the correct content type */
         response.writeHead(200, {"Content-Type": "text/html"});
 
