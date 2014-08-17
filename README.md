@@ -1,7 +1,9 @@
 Nodepot
 =======
 
-Version 0.3: 11.08.2014
+Version 0.31: 17.08.2014
+
+Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
 
 - not production ready !!! -
 
@@ -24,6 +26,12 @@ npm install --save string crypto redis moment
 npm install emailjs --save
 npm install twit
 npm install nodejs-hpfeeds
+
+On a plain vanilla Debian system add the following
+
+npm install put
+npm install binary
+
 
 If the npm call fails, run the following code to fix the entry.
 
