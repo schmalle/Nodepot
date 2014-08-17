@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.3: 11.08.2014
+Version 0.31: 17.08.2014
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
 
