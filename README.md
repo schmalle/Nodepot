@@ -3,7 +3,7 @@ Nodepot
 
 Version 0.3: 11.08.2014
 
-Thanks to Angelo Dell'Aera for testing.
+Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
 
 - not production ready !!! -
 
