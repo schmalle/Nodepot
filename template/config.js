@@ -13,7 +13,6 @@ config.hpfeeds = {};
 //
 //
 
-config.twitter.use = "no";
 config.twitter.access_token = "";
 config.twitter.access_token_secret = "";
 config.twitter.api_key = "";

@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.31: 17.08.2014
+Version 0.32: 05.10.2014
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
 
@@ -25,6 +25,7 @@ npm install --save string crypto redis moment
 (NOT NEEDED) npm install nodemailer --save
 npm install emailjs --save
 npm install twit
+npm install string
 npm install nodejs-hpfeeds
 
 On a plain vanilla Debian system add the following
