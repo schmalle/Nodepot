@@ -11,6 +11,7 @@ var attackStrings = ["-d+allow_url_include=on+-d+safe_mode=off+-d+suhosin.simula
                      "/components/com_jnews/includes/openflashchart/php-ofc-library/ofc_upload_image.php?name=", "Openflash upload attack",
                      "CONFIG[MWCHAT_Libs]=http://", "MWChat RFI",
                      "/login.php?un=1&pw=-1'", "SQL Injection",
+                     "un=-1'&pw=1", "SQL Injection",
                      "/index.php?option=com_jce&task=plugin&plugin=imgmanager&fil", "JCE attack"
                       ];                                                      // MWchat RFI 2006
 
