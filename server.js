@@ -66,7 +66,7 @@ function start() {
     }
 
     http.createServer(onRequest).listen(config.port);
-    console.log("Server has started.");
+    console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + " Server has started.");
 }
 
 exports.start = start;

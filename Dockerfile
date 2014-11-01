@@ -1,13 +1,24 @@
 FROM ubuntu
 MAINTAINER Markus Schmall
 
-RUN apt-get install nodejs redis-server curl npm will install all needed components.
-RUN npm install --save string crypto redis moment
-RUN npm install nodemailer --save
-RUN npm install emailjs --save
-RUN npm install twit
-RUN npm install string
-RUN npm install nodejs-hpfeeds
- 
-# CMD ["/usr/local/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"] 
+RUN sudo apt-get update
+RUN sudo apt-get -y install nodejs git
+RUN sudo apt-get -y install redis-server curl npm
+RUN sudo npm install --save string crypto redis moment
+RUN sudo npm install nodemailer --save
+RUN sudo npm install emailjs --save
+RUN sudo npm install twit
+RUN sudo npm install string
+RUN sudo npm install nodejs-hpfeeds
+RUN sudo npm install put
+RUN sudo npm install binary
+
+EXPOSE 8888
+
+RUN cd /opt && /usr/bin/git clone https://github.com/schmalle/Nodepot.git
+RUN mkdir /etc/nodepot
+RUN cp /opt/Nodepot/template/config.js /etc/nodepot/config.js
+
+RUN /opt/Nodepot/dbstart.sh
+RUN /opt/Nodepot/nodepot.sh
 
