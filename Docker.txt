@@ -1,6 +1,0 @@
-The official Nodepot dockerhub image is build as follows
-
-docker build -t="nodepot" .
-
-docker run -t -i nodepot /bin/bash
-

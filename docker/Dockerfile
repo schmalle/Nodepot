@@ -17,8 +17,9 @@ EXPOSE 8888
 
 RUN cd /opt && /usr/bin/git clone https://github.com/schmalle/Nodepot.git
 RUN mkdir /etc/nodepot
+RUN mkdir /opt/nodepot
+RUN mkdir /etc/nodepot/downloads
 RUN cp /opt/Nodepot/template/config.js /etc/nodepot/config.js
 
-RUN /opt/Nodepot/dbstart.sh
-RUN /opt/Nodepot/nodepot.sh
+
 
