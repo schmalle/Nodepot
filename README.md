@@ -1,9 +1,15 @@
 Nodepot
 =======
 
-Version 0.32: 05.10.2014
+Version 0.33: 02.11.2014
+
+0.33 News:
+
+
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
+Thanks for Lutz Wischmann and Markus Schroer for bug reporting
+
 
 - not production ready !!! -
 
@@ -27,6 +33,7 @@ npm install emailjs --save
 npm install twit
 npm install string
 npm install nodejs-hpfeeds
+npm install urlencode --registry=http://r.cnpmjs.org
 
 On a plain vanilla Debian system add the following
 

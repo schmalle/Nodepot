@@ -12,6 +12,7 @@ RUN sudo npm install string
 RUN sudo npm install nodejs-hpfeeds
 RUN sudo npm install put
 RUN sudo npm install binary
+RUN sudo npm install urlencode --registry=http://r.cnpmjs.org
 
 EXPOSE 8888
 

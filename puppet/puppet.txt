@@ -6,6 +6,17 @@
 # base box for vagrant: vagrant box add Ubuntu1404 https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box
 #
 
+
+
+
+
+#
+#
+# BROKEN for NOW (02.11.2014, will be fixed shortly)
+#
+#
+
+
 $enhancers = [ "nodejs", "npm", "redis-server" ]
 
 $npmEnhancers = ["moment", "twit", "redis", "crypto", "nodemailer", "emailjs"]
