@@ -5,6 +5,10 @@ Version 0.33: 02.11.2014
 
 0.33 News:
 
+- Bugfix for DTAG EWS reporting (thanks Markus and Lutz)
+- added dockerized version (schmalle/nodepot)
+
+
 
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.

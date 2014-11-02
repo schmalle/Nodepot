@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker/Dockerfile" afterPath="$PROJECT_DIR$/docker/Dockerfile" />
+    <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="fixed bugs">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker/Docker.txt" afterPath="$PROJECT_DIR$/docker/Docker.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/puppet/puppet.txt" afterPath="$PROJECT_DIR$/puppet/puppet.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reporter.js" afterPath="$PROJECT_DIR$/reporter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Nodepot.iws" />
@@ -86,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/docker/Docker.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-              <caret line="14" column="104" selection-start-line="14" selection-start-column="104" selection-end-line="14" selection-end-column="104" />
+              <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -95,8 +93,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16030534" vertical-offset="0" max-vertical-offset="1335">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5954198" vertical-offset="0" max-vertical-offset="1395">
+              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -199,10 +197,10 @@
         <option value="$PROJECT_DIR$/docker/dbstart.sh" />
         <option value="$PROJECT_DIR$/docker/nodepotstart.sh" />
         <option value="$PROJECT_DIR$/html/demo.html" />
-        <option value="$PROJECT_DIR$/docker/Docker.txt" />
         <option value="$PROJECT_DIR$/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/puppet/puppet.txt" />
         <option value="$PROJECT_DIR$/reporter.js" />
+        <option value="$PROJECT_DIR$/docker/Docker.txt" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -1046,7 +1044,7 @@
       <workItem from="1414613223686" duration="72000" />
       <workItem from="1414785709014" duration="67000" />
       <workItem from="1414785994747" duration="268000" />
-      <workItem from="1414858290291" duration="6751000" />
+      <workItem from="1414858290291" duration="7412000" />
     </task>
     <task id="LOCAL-00001" summary="added things">
       <created>1407779334066</created>
@@ -1144,11 +1142,17 @@
       <option name="project" value="LOCAL" />
       <updated>1414940799711</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixed bugs">
+      <created>1414941611175</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1414941611175</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165551000" />
+    <option name="totallyTimeSpent" value="166212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -1238,7 +1242,8 @@
     <MESSAGE value="added" />
     <MESSAGE value="basic Docker file" />
     <MESSAGE value="changed based on creation of dockerized version" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed based on creation of dockerized version" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1631,14 +1636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/Docker.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="14" column="104" selection-start-line="14" selection-start-column="104" selection-end-line="14" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vagrant/Vagrantfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="1980">
@@ -1674,10 +1671,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docker/Docker.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16030534" vertical-offset="0" max-vertical-offset="1335">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5954198" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding />
         </state>
       </provider>
