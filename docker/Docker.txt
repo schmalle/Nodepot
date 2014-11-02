@@ -2,6 +2,14 @@ The official Nodepot dockerhub image is build as follows
 
 docker build --no-cache -t="nodepotimg" .
 
+To start the container nodepot_ins based on the container nodepot img and active a shell, use this
+command:
+
 docker run -name nodepot_ins -p 8889:8888 -t -i nodepotimg /bin/bash
 
+To start the container named "nodepot_ins" based on the container "nodepotimg" and boot up the honeypot,
+do a:
+
 docker run -name nodepot_ins -d -p 8889:8888 nodepotimg /opt/Nodepot/docker/nodepotstart.sh
+
+HINT FOR Mac OS X users: Run a "boot2docker ip" command to retrieve the IP adress for your container !!!
