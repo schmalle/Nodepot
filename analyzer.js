@@ -50,10 +50,14 @@ function URLNotExists(url, response)
  */
 function analyze(request, response)
 {
+
+
     var query = url.parse(request.url).query;
+    var urlRequest = request.url;
     var ua = request.headers['user-agent'];
     var checkMe = null;
 
+    var method = request.method;
 
 
     if (query != null)
@@ -61,6 +65,10 @@ function analyze(request, response)
 
         query = unescape(query);
 
+        var buffer = method + " " + urlRequest;
+        for(var item in request.headers) {
+            buffer = buffer + "\r\n" + item + ":" + request.headers[item];
+        }
 
         var externalReference = (S(query).contains("http://"));
         var directoryTraversal = (S(query).contains(".."));
@@ -91,7 +99,7 @@ function analyze(request, response)
 
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
 
-            server.report(config.ews.username, config.ews.password, config.name_hp, request.connection.remoteAddress, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port);
+            server.report(config.ews.username, config.ews.password, config.name_hp, request.connection.remoteAddress, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port, new Buffer(buffer).toString('base64'));
 
 
 

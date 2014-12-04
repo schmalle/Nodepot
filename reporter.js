@@ -10,7 +10,7 @@ var moment = require("moment");
 var querystring = require("querystring");
 
 
-function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL, alarmPort) {
+function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL, alarmPort, rawData) {
 
     var reportTemplate = fs.readFileSync('./template/report.txt','utf8');
 
@@ -21,8 +21,9 @@ function report(username, password, host, ip, time, attacktype, mode, alarmHost,
     var stage5 = S(stage4).replaceAll('TIME', time).s
     var stage6 = S(stage5).replaceAll('ATTACKTYPE', urlencode(attacktype)).s
     var stage7 = S(stage6).replaceAll('MY_IP', config.my_ip).s
+    var stage8 = S(stage6).replaceAll('RDATA', rawData).s
 
-    PostCode(stage7, mode, alarmHost, alarmURL, alarmPort);
+    PostCode(stage8, mode, alarmHost, alarmURL, alarmPort);
 
 }
 
