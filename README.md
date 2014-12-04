@@ -9,10 +9,8 @@ Version 0.33: 02.11.2014
 - added dockerized version (schmalle/nodepot)
 
 
-
-
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
-Thanks for Lutz Wischmann and Markus Schroer for bug reporting
+Thanks for Lutz Wischmann and Markus Schroer for bug reporting.
 
 
 - not production ready !!! -
@@ -43,6 +41,7 @@ On a plain vanilla Debian system add the following
 
 npm install put
 npm install binary
+
 
 
 If the npm call fails, run the following code to fix the entry.
