@@ -16,4 +16,8 @@ var attackStrings = ["-d+allow_url_include=on+-d+safe_mode=off+-d+suhosin.simula
                       ];                                                      // MWchat RFI 2006
 
 
+var replaceStrings = ["user-agent", "User-Agent", "host", "Host", "content-type:", "Content-type:"
+];
+
 exports.attackStrings = attackStrings;
+exports.replaceStrings = replaceStrings;

@@ -1,17 +1,9 @@
 Nodepot
 =======
 
-Version 0.33: 02.11.2014
-
-0.33 News:
-
-- Bugfix for DTAG EWS reporting (thanks Markus and Lutz)
-- added dockerized version (schmalle/nodepot)
-
+Version 0.33: 07.12.2014
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
-Thanks for Lutz Wischmann and Markus Schroer for bug reporting.
-
 
 - not production ready !!! -
 
@@ -35,13 +27,11 @@ npm install emailjs --save
 npm install twit
 npm install string
 npm install nodejs-hpfeeds
-npm install urlencode --registry=http://r.cnpmjs.org
 
 On a plain vanilla Debian system add the following
 
 npm install put
 npm install binary
-
 
 
 If the npm call fails, run the following code to fix the entry.
@@ -68,8 +58,6 @@ e.g. with a 5 minute interval the following call to your crontab:
 /opt/Nodepot/nodepot.sh
 
 Internally it will call corecheck.sh for some additional stuff.
-
-
 
 
 Contact:

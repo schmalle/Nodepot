@@ -44,8 +44,8 @@ function PostCode(codestring, mode, alarmHost, alarmURL, alarmPort) {
 
         var query = "https://" + config.ews.host + ":" + config.ews.port + config.ews.path;
 
-        console.log("Body Input" + codestring);
-        console.log("Request URL:" + query);
+        //console.log("Body Input" + codestring);
+        //console.log("Request URL:" + query);
 
         request.post({
             headers: {'content-type' : 'text/xml'},

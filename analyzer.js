@@ -67,8 +67,10 @@ function analyze(request, response)
 
         var buffer = method + " " + urlRequest;
         for(var item in request.headers) {
-            buffer = buffer + "\r\n" + item + ":" + request.headers[item];
+            buffer = buffer + "\r\n" + checkHeaders(item) + ":" + request.headers[item];
         }
+
+        console.log(buffer);
 
         var externalReference = (S(query).contains("http://"));
         var directoryTraversal = (S(query).contains(".."));
@@ -152,6 +154,29 @@ function checkRules(url)
 
 }   // checkrules
 
+/**
+ *
+ * @param url
+ * @returns {*}
+ */
+function checkHeaders(url)
+{
+
+
+    for(var i=0;i<rules.replaceStrings.length;i++)
+    {
+
+        if (S(url).contains(rules.replaceStrings[i]))
+            return rules.replaceStrings[i++];
+
+        i++;
+
+    }
+
+
+    return url;
+
+}   // checkHeaders
 
 
 function externalReferenceCheck(request, query)

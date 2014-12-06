@@ -1,0 +1,3 @@
+Version 0.33 (06.12.2014)
+
+- added base64 encoding for "raw" request data, when sending data (optionally) to DTAG early warning system
