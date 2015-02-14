@@ -3,10 +3,10 @@ var url = require("url");
 var fs = require("fs");
 var path = require('path');
 var ana = require("./analyzer");
-var config = require('/etc/nodepot/config');
 var S = require('string');
 var twitter = require("./twitter");
 var moment = require("moment");
+var config = "test";
 
 
 
@@ -20,7 +20,13 @@ var mimeTypes = {
 
 
 
-function start() {
+function start(configName) {
+
+    console.log("Starting server with config name " + configName);
+
+    config = require(configName);
+
+
     function onRequest(request, response) {
 
 
@@ -30,14 +36,20 @@ function start() {
         var query = request.url;
         var ip = request.connection.remoteAddress;
 
+        var configuredHtmlPath = config.html;
+        if (configuredHtmlPath == undefined)
+        {
+            configuredHtmlPath = './html/';
+        }
+
         // admin check (query and IP range)
         if ((query == "/admin" || query == "admin") && (S(ip).contains("127.0.0.1") || S(ip).contains(config.home_ip)))
         {
             // show UI
 
-            var defaultTemplateStart = fs.readFileSync('./html/adminstart.html', 'utf8');
+            var defaultTemplateStart = fs.readFileSync(configuredHtmlPath + 'adminstart.html', 'utf8');
             var learnedStuff = fs.readFileSync("/var/log/nodepot.log", 'utf8');
-            var defaultTemplateEnd = fs.readFileSync('./html/adminend.html', 'utf8');
+            var defaultTemplateEnd = fs.readFileSync(configuredHtmlPath + 'adminend.html', 'utf8');
             response.write(defaultTemplateStart);
             response.write(learnedStuff);
             response.write(defaultTemplateEnd);
@@ -47,10 +59,13 @@ function start() {
         {  /* default analyze case */
 
             /* check if the request contains an .. code */
-            statusAnalyze = ana.analyze(request, response);
+            statusAnalyze = ana.analyze(request, response, config);
 
-            var defaultTemplate = fs.readFileSync('./html/demo.html', 'utf8');
-            var learnedStuff = fs.readFileSync('./html/dork.html', 'utf8');
+
+
+
+            var defaultTemplate = fs.readFileSync(configuredHtmlPath + 'demo.html', 'utf8');
+            var learnedStuff = fs.readFileSync(configuredHtmlPath + 'dork.html', 'utf8');
 
             response.write(defaultTemplate);
             response.write(learnedStuff);

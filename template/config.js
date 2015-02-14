@@ -22,6 +22,7 @@ config.twitter.verbose = "no";
 
 
 
+config.email.use = "no";                            // new in version 0.34
 config.email.name = "emailname";
 config.email.server = "emailserver";
 config.email.password = "emailpassword";
@@ -41,9 +42,10 @@ config.ews.password = "";
 //
 //
 
+config.html = "/Users/markus/html/";                // new in version 0.34
 config.mode = "test";                               // test // production
 config.verbose = true;                              // true // false
-config.port = 8888;
+config.port = 8889;
 config.dl_location = "/opt/nodepot/downloads/";
 config.home_ip = "192.168.178";                     // from this origin the status side can be seen
 config.name_hp = "Nodepot";

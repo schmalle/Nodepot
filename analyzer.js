@@ -8,7 +8,6 @@ var db = require("./db");
 var S = require('string');
 var moment = require("moment");
 var dl = require("./downloader");
-var config = require('/etc/nodepot/config');
 var crypto = require('crypto');
 var rules = require("./template/rules");
 var server = require("./reporter");
@@ -20,9 +19,9 @@ var hpfeeds = require("nodejs-hpfeeds");
  *
  * @param url
  * @param response
- * @constructor
+ * @construtor
  */
-function URLExists(url, response)
+function URLExists(url, response, config)
 {
     if (config.verbose)
         console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Starting URLExists with URL " + url);
@@ -34,12 +33,12 @@ function URLExists(url, response)
  * @param response
  * @constructor
  */
-function URLNotExists(url, response)
+function URLNotExists(url, response, config)
 {
     db.setstore(url);
 
     // update the preloaded file
-    db.setgetall(response);
+    db.setgetall(response, config);
 }
 
 /**
@@ -48,7 +47,7 @@ function URLNotExists(url, response)
  * @param response
  * @returns {number}
  */
-function analyze(request, response)
+function analyze(request, response, config)
 {
 
 
@@ -81,7 +80,7 @@ function analyze(request, response)
         if (externalReference || directoryTraversal || crossSiteScripting || checkMe != null)
         {
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
-            db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response);
+            db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response, config);
 
 
             // moment().format('YYYY-MM-DD h:mm:ss a'

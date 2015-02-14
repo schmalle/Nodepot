@@ -6,4 +6,7 @@ add right / correct check for LFI / RFI etc. in the analyzer
 add correct downloading / hashing function
 add correct logging to file
 add config management stuff
-add HPfeeds support
+add better docker support
+remove all dependencies from path directories
+
+

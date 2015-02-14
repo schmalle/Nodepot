@@ -1,10 +1,10 @@
-/**
- * Created by mschmall on 09/02/14.
+/*
+
+    Database related routines
+
  */
 
 var moment = require("moment");
-var config = require('/etc/nodepot/config');
-
 
 var redis = require("redis"),
     client = redis.createClient();
@@ -16,49 +16,6 @@ client.on("error", function (err) {
 });
 
 
-/** just store the input value with a prefixed NP_IP_
-function store(url)
-{
-
-    client.set("NP_URL_" + url, "dummy", function ()
-        {
-            var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-            console.log(time + ": Stored URL " + url);
-        }
-    );
-}
-
- **/
-
-/** returns a value for a key
-function get(url)
-{
-    client.get("NP_URL_"+url, function (error, value)
-    {
-        if (value == null)
-        {
-            console.log("db.get(): ERROR: Key NP_URL_" + url + " not existing...");
-        }
-        else
-        {
-            console.log("db.get(): Found value " + value);
-        }
-
-        return value;
-
-    });
-}
-
-**/
-
-
-/** return all data matching a certain key
-function getall()
-{
-    return client.keys("NP_URL_*");
-}
-
- **/
 
 function setstore(url)
 {
@@ -70,8 +27,8 @@ function setstoreMaliciousURL(url)
     client.sadd("NP_URL_MALICIOUS", url);
 }
 
-/** return all data from the NP_IP set **/
-function setgetall(response, attack)
+/** return all data from the NP_URL set **/
+function setgetall(response, attack, config)
 {
 
     var time = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -85,16 +42,31 @@ function setgetall(response, attack)
 
         value.forEach(function (attack) {
 
-            //console.log("Found value: " + attack);
-            response.write(attack + "<br>");
-            a = a + attack + "<br>";
+            console.log("Found: " + attack);
+
+            if (attack != undefined) {
+
+                response.write(attack + "<br>");
+                a = a + attack + "<br>";
+            }
 
         });
 
-        fs.writeFile("./html/dork.html", a, function(err) {
-            if(err) {
+
+        console.log("Info: config ius " + config);
+
+        var filePath = config.html + "/dork.html";
+
+        console.log("Before file writing code " + filePath);
+
+
+        fs.writeFile(filePath, a, function(err) {
+            if(err)
+            {
                 console.log(err);
-            } else {
+                console.log("File path: " + filePath)
+            } else
+            {
                 console.log("The file was saved!");
             }
         });
@@ -110,8 +82,9 @@ function setgetall(response, attack)
  * @param positive
  * @param negative
  * @param response
+ * @param con
  */
-function ismember(url, positive, negative, response)
+function ismember(url, positive, negative, response, config)
 {
 
     var time = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -124,11 +97,11 @@ function ismember(url, positive, negative, response)
 
         if (1 == value)
         {
-            positive(url, response);
+            positive(url, response, config);
         }
         else
         {
-            negative(url, response);
+            negative(url, response, config);
         }
 
     });
