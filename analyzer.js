@@ -79,7 +79,15 @@ function analyze(request, response, config)
 
         if (externalReference || directoryTraversal || crossSiteScripting || checkMe != null)
         {
-            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
+
+            var attackerIP = request.connection.remoteAddress;
+
+            if (config.use_forwarded_for)
+            {
+                attackerIP = request.getHeader("x-forwarded-for");
+            }
+
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + attackerIP);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response, config);
 
 
@@ -98,9 +106,9 @@ function analyze(request, response, config)
             }
 
 
-            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + request.connection.remoteAddress);
+            console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + attackerIP);
 
-            server.report(config.ews.username, config.ews.password, config.name_hp, request.connection.remoteAddress, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port, new Buffer(buffer).toString('base64'));
+            server.report(config.ews.username, config.ews.password, config.name_hp, attackerIP, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port, new Buffer(buffer).toString('base64'));
 
 
 

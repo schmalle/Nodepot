@@ -46,6 +46,7 @@ config.html = "/opt/Nodepot/html/";                // new in version 0.34
 config.mode = "test";                               // test // production
 config.verbose = true;                              // true // false
 config.port = 8889;
+config.use_forwarded_for = true;
 config.dl_location = "/opt/nodepot/downloads/";
 config.home_ip = "192.168.178";                     // from this origin the status side can be seen
 config.name_hp = "Nodepot";
