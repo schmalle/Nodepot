@@ -115,7 +115,7 @@ function analyze(request, response, config)
         {
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found query: " + query + " and path " + unescape(request.url) + " and USER AGENT: " + ua);
 
-            URLExists(response);
+            URLExists(request.url, response, config);
         }
 
     }   // if query != null
