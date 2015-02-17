@@ -108,7 +108,7 @@ function analyze(request, response, config)
             // now check all GET parameters
             if (externalReference)
             {
-                externalReferenceCheck(request, query);
+                externalReferenceCheck(request, query, config);
             }
         }
         else
@@ -178,7 +178,7 @@ function checkHeaders(url)
 }   // checkHeaders
 
 
-function externalReferenceCheck(request, query)
+function externalReferenceCheck(request, query, config)
 {
 
     // get start & max length
