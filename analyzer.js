@@ -55,9 +55,20 @@ function analyze(request, response, config)
     var urlRequest = request.url;
     var ua = request.headers['user-agent'];
     var checkMe = null;
-
     var method = request.method;
 
+    /* */
+    var attackerIP = request.connection.remoteAddress;
+    if (config.use_forwarded_for != undefined && config.use_forwarded_for)
+    {
+
+        for(var item in request.headers)
+        {
+            if (checkHeaders(item) == "x-forwarded-for")
+                attackerIP = request.headers[item];
+        }
+
+    }
 
     if (query != null)
     {
@@ -77,21 +88,14 @@ function analyze(request, response, config)
 
         checkMe = checkRules(unescape(request.url));
 
+
         if (externalReference || directoryTraversal || crossSiteScripting || checkMe != null)
         {
 
-            var attackerIP = request.connection.remoteAddress;
 
-            if (config.use_forwarded_for)
-            {
-                attackerIP = request.getHeader("x-forwarded-for");
-            }
 
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + attackerIP);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response, config);
-
-
-            // moment().format('YYYY-MM-DD h:mm:ss a'
 
             console.log("unecape url:" + unescape(request.url) + " decodeuri: " + decodeURI(request.url));
 
@@ -110,9 +114,6 @@ function analyze(request, response, config)
 
             server.report(config.ews.username, config.ews.password, config.name_hp, attackerIP, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port, new Buffer(buffer).toString('base64'));
 
-
-
-
             // now check all GET parameters
             if (externalReference)
             {
@@ -129,7 +130,7 @@ function analyze(request, response, config)
     }   // if query != null
     else
     {
-        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query (/) from IP: " + request.connection.remoteAddress  + " and USER AGENT: " + ua);
+        console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Found empty query (/) from IP: " + attackerIP  + " and USER AGENT: " + ua);
     }
 
     return checkMe;
