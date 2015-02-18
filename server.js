@@ -47,9 +47,9 @@ function start(configName) {
         {
             // show UI
 
-            var defaultTemplateStart = fs.readFileSync(configuredHtmlPath + 'adminstart.html', 'utf8');
+            var defaultTemplateStart = fs.readFileSync(configuredHtmlPath + '/adminstart.html', 'utf8');
             var learnedStuff = fs.readFileSync("/var/log/nodepot.log", 'utf8');
-            var defaultTemplateEnd = fs.readFileSync(configuredHtmlPath + 'adminend.html', 'utf8');
+            var defaultTemplateEnd = fs.readFileSync(configuredHtmlPath + '/adminend.html', 'utf8');
             response.write(defaultTemplateStart);
             response.write(learnedStuff);
             response.write(defaultTemplateEnd);
@@ -64,8 +64,8 @@ function start(configName) {
 
 
 
-            var defaultTemplate = fs.readFileSync(configuredHtmlPath + 'demo.html', 'utf8');
-            var learnedStuff = fs.readFileSync(configuredHtmlPath + 'dork.html', 'utf8');
+            var defaultTemplate = fs.readFileSync(configuredHtmlPath + '/demo.html', 'utf8');
+            var learnedStuff = fs.readFileSync(configuredHtmlPath + '/dork.html', 'utf8');
 
             response.write(defaultTemplate);
             response.write(learnedStuff);

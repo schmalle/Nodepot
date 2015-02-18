@@ -42,7 +42,7 @@ config.ews.password = "";
 //
 //
 
-config.html = "/opt/Nodepot/html/";                // new in version 0.34
+config.html = "/Users/markus/html";                // new in version 0.34
 config.mode = "test";                               // test // production
 config.verbose = true;                              // true // false
 config.port = 8889;

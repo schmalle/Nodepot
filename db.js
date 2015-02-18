@@ -11,6 +11,8 @@ var redis = require("redis"),
 
 var fs = require("fs");
 
+var configGlobal = "none";
+
 client.on("error", function (err) {
     console.log("Error " + err);
 });
@@ -33,6 +35,11 @@ function setgetall(response, attack, config)
 
     var time = moment().format('MMMM Do YYYY, h:mm:ss a');
 
+    if( config == undefined && configGlobal != "none")
+    {
+        config = configGlobal;
+    }
+
     console.log(time + ": Updating local file with attack data");
 
     client.smembers("NP_URL", function (error, value)
@@ -46,30 +53,28 @@ function setgetall(response, attack, config)
 
             if (attack != undefined) {
 
-                response.write(attack + "<br>");
+             //   response.write(attack + "<br>");
                 a = a + attack + "<br>";
             }
 
         });
 
 
-        console.log("Info: config ius " + config);
+        console.log("Info: config is " + config);
 
         var filePath = config.html + "/dork.html";
 
         console.log("Before file writing code " + filePath);
+        fs.unlinkSync(filePath);
 
 
-        fs.writeFile(filePath, a, function(err) {
-            if(err)
-            {
-                console.log(err);
-                console.log("File path: " + filePath)
-            } else
-            {
-                console.log("The file was saved!");
-            }
+        var stream = fs.createWriteStream(filePath);
+        stream.once('open', function(fd) {
+            stream.write(a);
+            stream.end();
         });
+
+
         return value;
 
     });
@@ -88,6 +93,10 @@ function ismember(url, positive, negative, response, config)
 {
 
     var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    if( config != undefined)
+    {
+        configGlobal = config;
+    }
 
 
     client.sismember("NP_URL", url, function (error, value)
@@ -118,6 +127,8 @@ function ismember(url, positive, negative, response, config)
  */
 function isMemberMaliciousURL(url, dest, storeCode, callBack)
 {
+
+
 
     var time = moment().format('MMMM Do YYYY, h:mm:ss a');
 

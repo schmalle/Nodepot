@@ -13,6 +13,8 @@ var rules = require("./template/rules");
 var server = require("./reporter");
 var hpfeeds = require("nodejs-hpfeeds");
 
+var configGlobal = "none";
+
 
 
 /**
@@ -37,6 +39,14 @@ function URLNotExists(url, response, config)
 {
     db.setstore(url);
 
+    if (config == undefined)
+    {
+        if (configGlobal != "none")
+        {
+            config = configGlobal;
+        }
+    }
+
     // update the preloaded file
     db.setgetall(response, config);
 }
@@ -56,6 +66,7 @@ function analyze(request, response, config)
     var ua = request.headers['user-agent'];
     var checkMe = null;
     var method = request.method;
+    configGlobal = config;
 
     /* */
     var attackerIP = request.connection.remoteAddress;
@@ -91,8 +102,6 @@ function analyze(request, response, config)
 
         if (externalReference || directoryTraversal || crossSiteScripting || checkMe != null)
         {
-
-
 
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack found: " + unescape(request.url) + " from IP: " + attackerIP);
             db.ismember(request.url.toLowerCase(), URLExists, URLNotExists, response, config);
