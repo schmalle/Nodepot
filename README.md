@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.34: 10.02.2015
+Version 0.35: 19.02.2015
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
 
@@ -47,6 +47,8 @@ Startup
 -------
 
 nodejs app.js will start the server. Please ensure that redis (http://redis.io/) is running.
+
+Optionally as additional parameter you can pass the location / name of the configfile.
 
 
 Crontab

@@ -7,10 +7,10 @@ RUN sudo apt-get -y install nodejs git redis-server curl npm
 RUN sudo npm install --save string crypto redis moment
 RUN sudo npm install nodemailer --save
 RUN sudo npm install emailjs --save
-RUN sudo npm install twit string nodejs-hpfeeds
-RUN sudo npm install put binary
-RUN sudo npm install urlencode
+RUN sudo npm install twit string nodejs-hpfeeds put binary urlencode
+
 #--registry=http://r.cnpmjs.org
+RUN sudo npm install forever -g
 
 EXPOSE 8888
 
