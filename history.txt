@@ -9,3 +9,8 @@ Version 0.34 (10.02.2015)
 Version 0.35 (19.02.2015)
 
 - added some bug fixes for fs stuff
+
+Version 0.36 (01.03.2015)
+
+- house keeping for the Docker support
+
