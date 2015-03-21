@@ -14,3 +14,6 @@ Version 0.36 (01.03.2015)
 
 - house keeping for the Docker support
 
+Version 0.37 (21.03.2015)
+
+- fixed bug in the reporting code

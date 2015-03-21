@@ -121,7 +121,7 @@ function analyze(request, response, config)
 
             console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Attack("+ checkMe +") found: " + unescape(request.url) + " from IP: " + attackerIP);
 
-            server.report(config.ews.username, config.ews.password, config.name_hp, attackerIP, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port, new Buffer(buffer).toString('base64'));
+            server.report(config.ews.username, config.ews.password, config.name_hp, attackerIP, moment().format('YYYY-MM-DD h:mm:ss a'), checkMe, "production", config.ews.host, config.ews.path, config.ews.port, new Buffer(buffer).toString('base64'), config);
 
             // now check all GET parameters
             if (externalReference)

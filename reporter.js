@@ -5,12 +5,12 @@ var fs = require('fs');
 var S = require('string');
 var util = require("sys");
 var request = require("request");
-var config = require("/etc/nodepot/config");
+//var config = require("/etc/nodepot/config");
 var moment = require("moment");
 var querystring = require("querystring");
 
 
-function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL, alarmPort, rawData) {
+function report(username, password, host, ip, time, attacktype, mode, alarmHost, alarmURL, alarmPort, rawData, config) {
 
     var reportTemplate = fs.readFileSync('./template/report.txt','utf8');
 
@@ -23,7 +23,7 @@ function report(username, password, host, ip, time, attacktype, mode, alarmHost,
     var stage7 = S(stage6).replaceAll('MY_IP', config.my_ip).s
     var stage8 = S(stage6).replaceAll('RDATA', rawData).s
 
-    PostCode(stage8, mode, alarmHost, alarmURL, alarmPort);
+    PostCode(stage8, mode, alarmHost, alarmURL, alarmPort, config);
 
 }
 
@@ -33,7 +33,7 @@ function report(username, password, host, ip, time, attacktype, mode, alarmHost,
 /*
     POST the data to the server or to the console, depending on the mode parameter (test)
  */
-function PostCode(codestring, mode, alarmHost, alarmURL, alarmPort) {
+function PostCode(codestring, mode, alarmHost, alarmURL, alarmPort, config) {
 
 
     var useews = config.ews.use;
