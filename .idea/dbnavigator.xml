@@ -32,6 +32,9 @@
     </execution-history>
     <argument-values-cache />
   </component>
+  <component name="DBNavigator.Project.ObjectDependencyManager">
+    <last-used-dependency-type value="INCOMING" />
+  </component>
   <component name="DBNavigator.Project.Settings">
     <connections />
     <browser-settings>
@@ -186,6 +189,10 @@
         <show-object-navigation-gutter value="false" />
         <show-spec-declaration-navigation-gutter value="true" />
       </general>
+      <confirmations>
+        <save-changes value="false" />
+        <revert-changes value="true" />
+      </confirmations>
     </code-editor-settings>
     <code-completion-settings>
       <filters>

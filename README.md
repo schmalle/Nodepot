@@ -1,7 +1,7 @@
 Nodepot
 =======
 
-Version 0.35: 19.02.2015
+Version 0.36: 14.05.2015
 
 Thanks to Angelo Dell'Aera and Andrea De Pasquale for testing.
 
@@ -15,6 +15,11 @@ Background:
 
 With Glaspot Lukas did a great job. Nodepot was initially started as a pure learning
 project for NodeJS.
+
+Needed things (Openshift):
+--------------------------
+
+See openshift.txt
 
 
 Needed things (Ubuntu/Debian):

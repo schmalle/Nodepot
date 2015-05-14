@@ -1,9 +1,8 @@
 var Twit = require('twit');
 var moment = require("moment");
 
-var config = require("/etc/nodepot/config");
 
-function tweet(message) {
+function tweet(message, config) {
 
     var T = new Twit({
         consumer_key: config.twitter.api_key,

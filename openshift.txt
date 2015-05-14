@@ -1,0 +1,27 @@
+Openshift
+---------
+
+Openshift is a great cloud solution from Red Hat. It offers e.g. free hosting for NodeJS applications.
+
+How to bring Nodepot to Openshift:
+
+
+
+1. Create an account at openshift and download necessary tooling (https://developers.openshift.com/en/getting-started-overview.html)
+
+2. Create your own application
+
+rhc app create <your app name> nodejs-0.10 --from-code=http://github.com/schmalle/nodepot.git
+
+3. Add redis to your application
+
+rhc add-cartridge http://cartreflect-claytondev.rhcloud.com/reflect?github=smarterclayton/openshift-redis-cart --app <your app name>
+
+4. ssh into your application
+
+5. copy files around as needed and start Nodepot
+
+/bin/bash ./app-root/repo/openshift/openshiftstart.sh
+
+
+Note: Steps 2 & 3 can be also done by use the supplied createopenshift.sh script.

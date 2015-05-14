@@ -29,6 +29,30 @@ function URLExists(url, response, config)
         console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + ": Starting URLExists with URL " + url);
 }
 
+
+/**
+ * retrive the correct path for the stored files
+ * @param config
+ * @param openShiftDataDir
+ * @returns {string}
+ */
+function getDownloadPath(config, openShiftDataDir) {
+
+
+    if (openShiftDataDir != undefined)
+    {
+        configuredHtmlPath = openShiftDataDir + '/dl/';
+    }
+    else
+    {
+        configuredHtmlPath = config.dl_location;
+    }
+
+    return configuredHtmlPath;
+}
+
+
+
 /**
  *
  * @param url
@@ -67,6 +91,9 @@ function analyze(request, response, config)
     var checkMe = null;
     var method = request.method;
     configGlobal = config;
+
+    var openShiftDataDir = process.env.OPENSHIFT_DATA_DIR;
+
 
     /* */
     var attackerIP = request.connection.remoteAddress;
@@ -205,6 +232,9 @@ function externalReferenceCheck(request, query, config)
     var len = query.length;
     var count = S(query).count("http");
 
+    var openShiftDataDir = process.env.OPENSHIFT_DATA_DIR;
+
+
     if (config.verbose)
         console.log("Number of external references in URL " + query + ": " + count);
 
@@ -237,7 +267,9 @@ function externalReferenceCheck(request, query, config)
             if (config.verbose)
                 console.log("External reference " + countrunner + ": " + externalURL);
 
-            dl.download(externalURL, config.dl_location + fileName, dl.finishCallBack);
+            var downLoadPath = getDownloadPath(config, openShiftDataDir);
+
+            dl.download(externalURL, downLoadPath + fileName, dl.finishCallBack);
 
 
         }
