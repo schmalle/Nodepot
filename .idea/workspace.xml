@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d76615-2555-4a8c-be7c-a7ce338c7238" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createopenshift.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dbcore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openshift/openshift.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openshift/openshiftstart.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/servercore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Nodepot.iws" />
@@ -866,13 +872,7 @@
       <workItem from="1430753757140" duration="5156000" />
       <workItem from="1430855262355" duration="548000" />
       <workItem from="1430936606596" duration="5410000" />
-      <workItem from="1431615488622" duration="535000" />
-    </task>
-    <task id="LOCAL-00017" summary="added package.json file for dependency handling">
-      <created>1429472189835</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1429472189835</updated>
+      <workItem from="1431615488622" duration="617000" />
     </task>
     <task id="LOCAL-00018" summary="test checkin">
       <created>1430061016117</created>
@@ -1162,11 +1162,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431615723830</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="added support for Redhats openshift cloud hosting">
+      <created>1431616028830</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1431616028831</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231032000" />
+    <option name="totallyTimeSpent" value="231114000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="6" />
