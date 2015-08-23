@@ -70,7 +70,7 @@ Internally it will call corecheck.sh for some additional stuff.
 Contact:
 --------
 
-markus-schmall@t-online
+markus@mschmall.de
 flakedev on twitter
 
 
